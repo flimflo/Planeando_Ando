@@ -15,8 +15,8 @@ class QR_ViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        obtenerInfo()
-        cargarQR()
+        //obtenerInfo()
+        //cargarQR()
         self.tabBarController?.navigationController?.navigationItem.hidesBackButton = true
     }
     @IBOutlet weak var lbNombre: UILabel!

@@ -73,12 +73,15 @@ class RegisterViewController: UIViewController {
                     //Success
                     print("Registration Successful")
                     
-                    var user = self.emailTextfield.text!
+                    /*var user = self.emailTextfield.text!
                     user.removeLast(9)
                     user.removeFirst()
                     user = "a" + user
                     
-                    self.uploadQR(user: user)
+                    self.uploadQR(user: user)*/
+                    SVProgressHUD.dismiss()
+                    self.performSegue(withIdentifier: "goToApp", sender: self)
+                    
                 }
             }
         }
@@ -99,7 +102,7 @@ class RegisterViewController: UIViewController {
         }
     }
     
-    func uploadQR(user: String){
+    /*func uploadQR(user: String){
         
         let uploadRef = Storage.storage().reference(withPath: "QR/\(user).png")
         
@@ -120,9 +123,9 @@ class RegisterViewController: UIViewController {
             print("Archivo subido exitosamente")
             self.uploadInfo(user: user)
         }
-    }
+    }*/
     
-    func generateQRCode(from string:String) -> UIImage? {
+    /*func generateQRCode(from string:String) -> UIImage? {
         
         let data = string.data(using: String.Encoding.ascii)
         
@@ -138,7 +141,7 @@ class RegisterViewController: UIViewController {
             
         }
         return nil
-    }
+    }*/
     
     func generateAlert(Message: String) {
         

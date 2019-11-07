@@ -9,13 +9,13 @@
 import UIKit
 import Firebase
 
-class Horario_ViewController: UIViewController {
+class ToDo_ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        obtenerInfo()
+        //obtenerInfo()
         self.tabBarController?.navigationController?.navigationItem.hidesBackButton = true
     }
     

@@ -392,7 +392,7 @@
         <!--Horario-->
         <scene sceneID="g5T-Kn-yW1">
             <objects>
-                <viewController id="hJb-ix-rgZ" customClass="Horario_ViewController" customModule="Planeando_Ando" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hJb-ix-rgZ" customClass="ToDo_ViewController" customModule="Planeando_Ando" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="UMM-EP-x8b"/>
                         <viewControllerLayoutGuide type="bottom" id="MhX-DF-MfY"/>
@@ -757,6 +757,6 @@
         <image name="person.crop.circle" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RuE-fI-2yI"/>
+        <segue reference="rRW-Qd-PQi"/>
     </inferredMetricsTieBreakers>
 </document>
