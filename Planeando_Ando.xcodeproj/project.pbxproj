@@ -11,9 +11,9 @@
 		6106D5FD23500F810094C6F7 /* Contacto_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6106D5FC23500F810094C6F7 /* Contacto_ViewController.swift */; };
 		6106D5FF235032290094C6F7 /* Colaborador.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6106D5FE235032290094C6F7 /* Colaborador.swift */; };
 		610B957E2356BC240024D21A /* Class_TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610B957D2356BC230024D21A /* Class_TabBar.swift */; };
+		6123C8522378BA1D000CDC7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6123C8512378BA1D000CDC7D /* GoogleService-Info.plist */; };
 		614621822350DD070028F7C7 /* Informacion_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614621812350DD070028F7C7 /* Informacion_ViewController.swift */; };
 		6179528023505A4600F3BD62 /* ToDo_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6179527F23505A4600F3BD62 /* ToDo_ViewController.swift */; };
-		61DDDEC623751A7B008AF10F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 61DDDEC523751A7B008AF10F /* GoogleService-Info.plist */; };
 		61DDDED023753297008AF10F /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DDDECD23753296008AF10F /* TodoListViewController.swift */; };
 		61DDDED123753297008AF10F /* SwipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DDDECE23753297008AF10F /* SwipeTableViewController.swift */; };
 		61DDDED223753297008AF10F /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DDDECF23753297008AF10F /* CategoryViewController.swift */; };
@@ -41,9 +41,9 @@
 		6106D5FC23500F810094C6F7 /* Contacto_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contacto_ViewController.swift; sourceTree = "<group>"; };
 		6106D5FE235032290094C6F7 /* Colaborador.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colaborador.swift; sourceTree = "<group>"; };
 		610B957D2356BC230024D21A /* Class_TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class_TabBar.swift; sourceTree = "<group>"; };
+		6123C8512378BA1D000CDC7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		614621812350DD070028F7C7 /* Informacion_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Informacion_ViewController.swift; sourceTree = "<group>"; };
 		6179527F23505A4600F3BD62 /* ToDo_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo_ViewController.swift; sourceTree = "<group>"; };
-		61DDDEC523751A7B008AF10F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		61DDDECD23753296008AF10F /* TodoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
 		61DDDECE23753297008AF10F /* SwipeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwipeTableViewController.swift; sourceTree = "<group>"; };
 		61DDDECF23753297008AF10F /* CategoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
@@ -121,7 +121,7 @@
 		6321A9B91B94EBA10053D2E7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				61DDDEC523751A7B008AF10F /* GoogleService-Info.plist */,
+				6123C8512378BA1D000CDC7D /* GoogleService-Info.plist */,
 				6321A9BA1B94EBA10053D2E7 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -258,7 +258,7 @@
 				6321A9C31B94EBA10053D2E7 /* Images.xcassets in Resources */,
 				63EBB3051D98004B004175E5 /* LaunchScreen.storyboard in Resources */,
 				6321A9E51B94EBE70053D2E7 /* MessageCell.xib in Resources */,
-				61DDDEC623751A7B008AF10F /* GoogleService-Info.plist in Resources */,
+				6123C8522378BA1D000CDC7D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
