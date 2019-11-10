@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="8Ny-HH-lhf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="8Ny-HH-lhf">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -235,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zMZ-W7-skD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1085.5999999999999" y="367.46626686656674"/>
+            <point key="canvasLocation" x="1086" y="588"/>
         </scene>
         <!--Log In-->
         <scene sceneID="Ku8-Lc-W7f">
@@ -367,6 +367,27 @@
             </objects>
             <point key="canvasLocation" x="-534.39999999999998" y="10.794602698650676"/>
         </scene>
+        <!--Chat-->
+        <scene sceneID="5pe-zM-UV5">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Chat" id="ahR-Tn-BwV" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="oiY-zT-O2k"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Rai-cG-rnh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2839" y="713"/>
+        </scene>
+        <!--ToDoL-->
+        <scene sceneID="8A6-ok-GnA">
+            <objects>
+                <viewControllerPlaceholder storyboardName="ToDoL" id="H3w-sD-eqd" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="a9b-ZS-aea"/>
+                    <navigationItem key="navigationItem" id="71o-t4-L0F"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rbf-Ky-ex1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2533" y="875"/>
+        </scene>
         <!--Colaborador-->
         <scene sceneID="wPI-qa-VRb">
             <objects>
@@ -379,17 +400,17 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="SI1-Wx-e77" kind="relationship" relationship="viewControllers" id="2Ej-kW-Y0t"/>
                         <segue destination="hJb-ix-rgZ" kind="relationship" relationship="viewControllers" id="RAa-Hb-YDm"/>
                         <segue destination="6DQ-ht-Rtt" kind="relationship" relationship="viewControllers" id="E07-et-2U7"/>
-                        <segue destination="3U4-yF-Xe1" kind="relationship" relationship="viewControllers" id="rcT-7H-wsg"/>
+                        <segue destination="ahR-Tn-BwV" kind="relationship" relationship="viewControllers" id="xwo-Dq-oaD"/>
+                        <segue destination="H3w-sD-eqd" kind="relationship" relationship="viewControllers" id="ZWC-wi-XXe"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VxQ-T1-REI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1887.2" y="10.344827586206897"/>
         </scene>
-        <!--Horario-->
+        <!--ToDoL-->
         <scene sceneID="g5T-Kn-yW1">
             <objects>
                 <viewController id="hJb-ix-rgZ" customClass="ToDo_ViewController" customModule="Planeando_Ando" customModuleProvider="target" sceneMemberID="viewController">
@@ -401,34 +422,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fecha:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PuT-lJ-R1w">
-                                <rect key="frame" x="16" y="125" width="115" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="dd/mm/aaaa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qwx-CD-EG4">
-                                <rect key="frame" x="67" y="181" width="272" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hora:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gea-a0-uUH">
-                                <rect key="frame" x="16" y="275" width="94" height="48"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hh:mm p.m" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="okb-DJ-gkr">
-                                <rect key="frame" x="67" y="331" width="240" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fecha:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxa-Ri-RIS">
                                 <rect key="frame" x="66" y="285" width="0.0" height="0.0"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -443,33 +436,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Lugar:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71V-o9-4R6">
-                                <rect key="frame" x="16" y="411" width="109" height="48"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ag3-Dz-fLM">
+                                <rect key="frame" x="116" y="475" width="143" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="lorem ips" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUI-k7-2Ok">
-                                <rect key="frame" x="67" y="467" width="240" height="60"/>
+                                <state key="normal" title="Abrir Lista"/>
+                                <connections>
+                                    <segue destination="H3w-sD-eqd" kind="modal" id="YIP-7c-lQ2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3w-iA-HTO">
+                                <rect key="frame" x="144" y="221" width="66" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Horario" image="clock" catalog="system" id="s0c-aC-h60"/>
-                    <connections>
-                        <outlet property="lbFecha" destination="Qwx-CD-EG4" id="Mm2-fu-MHe"/>
-                        <outlet property="lbHora" destination="okb-DJ-gkr" id="mIb-7T-K72"/>
-                        <outlet property="lbLugar" destination="bUI-k7-2Ok" id="vMO-T6-sSN"/>
-                    </connections>
+                    <tabBarItem key="tabBarItem" title="ToDoL" image="checkmark.shield" catalog="system" id="s0c-aC-h60"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6NJ-V5-Bjl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2864.8000000000002" y="464.6176911544228"/>
+            <point key="canvasLocation" x="3804" y="464.6176911544228"/>
         </scene>
         <!--Contactos-->
         <scene sceneID="kW3-B9-dDd">
@@ -574,7 +561,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PPf-82-LtU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3790" y="465"/>
+            <point key="canvasLocation" x="4728.8000000000002" y="464.6176911544228"/>
         </scene>
         <!--QR-->
         <scene sceneID="KSe-mz-d07">
@@ -749,7 +736,7 @@
         <image name="background_green" width="1000" height="1000"/>
         <image name="background_pink" width="1000" height="1000"/>
         <image name="background_purple" width="1000" height="1000"/>
-        <image name="clock" catalog="system" width="64" height="60"/>
+        <image name="checkmark.shield" catalog="system" width="64" height="60"/>
         <image name="globe" catalog="system" width="64" height="60"/>
         <image name="info.circle" catalog="system" width="64" height="60"/>
         <image name="info.png" width="28" height="28"/>
@@ -757,6 +744,7 @@
         <image name="person.crop.circle" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rRW-Qd-PQi"/>
+        <segue reference="RuE-fI-2yI"/>
+        <segue reference="ZWC-wi-XXe"/>
     </inferredMetricsTieBreakers>
 </document>

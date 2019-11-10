@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //let myDatabase = Database.database().reference()
         
         //myDatabase.setValue("We have data")
+        
+        do{
+            print("Initialising new realm")
+            _ = try Realm()
+
+        } catch{
+            print("Error initialising new realm, \(error)")
+        }
         
         return true
     }

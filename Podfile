@@ -12,5 +12,8 @@ pod 'Firebase/Auth'
 pod 'Firebase/Database'
 pod 'SVProgressHUD'
 pod 'Firebase/Storage'
+pod 'RealmSwift'
+pod 'SwipeCellKit'
+pod 'ChameleonFramework'
 
 end
