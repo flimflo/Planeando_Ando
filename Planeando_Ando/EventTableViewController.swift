@@ -21,6 +21,17 @@ class EventTableViewController: UITableViewController {
         //self.navigationItem.rightBarButtonItem = self.editButtonItem
         
     }
+    
+    @IBOutlet var popOver: UIView!
+    
+    @IBAction func addPressed(_ sender: UIBarButtonItem) {
+        self.view.addSubview(popOver)
+        print(popOver.center)
+        popOver.frame = CGRect(x: self.view.frame.width - 127, y: 0, width: 127, height: 127)
+    }
+    
+    
+    
 
     // MARK: - Table view data source
 
@@ -60,7 +71,7 @@ class EventTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
@@ -90,3 +101,4 @@ class EventTableViewController: UITableViewController {
     */
 
 }
+
