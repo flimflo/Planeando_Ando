@@ -396,7 +396,7 @@
                         <viewControllerLayoutGuide type="bottom" id="hQJ-9s-wEe"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4NK-aq-ZFX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bB9-M3-X1E">
@@ -452,12 +452,39 @@
                     <navigationItem key="navigationItem" id="X3l-Uz-HK2">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Vpg-MI-btz">
                             <connections>
-                                <segue destination="2MC-JH-yy1" kind="modal" id="By8-09-StG"/>
+                                <action selector="addPressed:" destination="Iat-7a-iIn" id="JAd-qE-qkf"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="popOver" destination="3vh-PH-IWK" id="eiV-0U-wUc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngl-gw-yED" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="3vh-PH-IWK">
+                    <rect key="frame" x="0.0" y="0.0" width="127" height="127"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="T5S-zS-kkd">
+                            <rect key="frame" x="10" y="18.5" width="107" height="90"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dv-VJ-0qs">
+                                    <rect key="frame" x="0.0" y="0.0" width="107" height="30"/>
+                                    <state key="normal" title="Nuevo evento"/>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SIO-dJ-5vD">
+                                    <rect key="frame" x="0.0" y="60" width="107" height="30"/>
+                                    <state key="normal" title="Unirse a evento"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="T5S-zS-kkd" firstAttribute="centerX" secondItem="3vh-PH-IWK" secondAttribute="centerX" id="Q8T-IA-Kgz"/>
+                        <constraint firstItem="T5S-zS-kkd" firstAttribute="centerY" secondItem="3vh-PH-IWK" secondAttribute="centerY" id="mhZ-78-Aq5"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="2892" y="-30"/>
         </scene>
@@ -817,7 +844,7 @@
         <image name="person.crop.circle" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CUZ-Si-kZA"/>
+        <segue reference="kRp-2X-Lid"/>
         <segue reference="ZWC-wi-XXe"/>
     </inferredMetricsTieBreakers>
 </document>
