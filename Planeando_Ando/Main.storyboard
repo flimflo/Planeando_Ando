@@ -411,10 +411,44 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="X3l-Uz-HK2">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Vpg-MI-btz"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Vpg-MI-btz">
+                            <connections>
+                                <action selector="addPressed:" destination="Iat-7a-iIn" id="tGB-8c-Jh0"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="popOver" destination="hfV-cw-CfL" id="2cx-TL-r0i"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngl-gw-yED" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <view contentMode="scaleToFill" id="hfV-cw-CfL">
+                    <rect key="frame" x="0.0" y="0.0" width="127" height="127"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="qUb-Th-BiQ">
+                            <rect key="frame" x="10" y="20" width="107" height="87"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6aj-qW-cIu">
+                                    <rect key="frame" x="0.0" y="0.0" width="107" height="30"/>
+                                    <state key="normal" title="Nuevo evento"/>
+                                    <connections>
+                                        <segue destination="HOd-fA-zXp" kind="push" id="MbC-9T-f53"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fh1-2d-xSZ">
+                                    <rect key="frame" x="0.0" y="57" width="107" height="30"/>
+                                    <state key="normal" title="Unirse a evento"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstItem="qUb-Th-BiQ" firstAttribute="centerY" secondItem="hfV-cw-CfL" secondAttribute="centerY" id="at3-Lx-YHu"/>
+                        <constraint firstItem="qUb-Th-BiQ" firstAttribute="centerX" secondItem="hfV-cw-CfL" secondAttribute="centerX" id="wnD-7b-wSa"/>
+                    </constraints>
+                </view>
             </objects>
             <point key="canvasLocation" x="2892" y="-30"/>
         </scene>
@@ -916,6 +950,7 @@
                         <viewLayoutGuide key="safeArea" id="48T-TV-fRM"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Info" image="info.circle" catalog="system" id="1QL-Ro-03n"/>
+                    <navigationItem key="navigationItem" id="7RX-Ld-jPx"/>
                     <connections>
                         <outlet property="scrollView" destination="M5U-pK-d11" id="bsI-x2-2NQ"/>
                         <outlet property="vwVista" destination="C5k-cV-yna" id="HGo-Ud-mMC"/>
