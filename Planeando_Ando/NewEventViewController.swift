@@ -9,17 +9,22 @@
 import UIKit
 
 class NewEventViewController: UIViewController {
-
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var vwVista: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        scrollView.contentSize = vwVista.frame.size
+        self.tabBarController?.navigationController?.navigationItem.hidesBackButton = true
     }
     
     @IBOutlet weak var codeLabel: UILabel!
     @IBAction func infoTextField(_ sender: UITextField) {
     }
-    
+
     /*
     // MARK: - Navigation
 
