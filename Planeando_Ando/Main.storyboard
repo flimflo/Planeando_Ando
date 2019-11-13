@@ -1018,13 +1018,13 @@
                     <tabBarItem key="tabBarItem" title="Info" image="info.circle" catalog="system" id="1QL-Ro-03n"/>
                     <navigationItem key="navigationItem" id="7RX-Ld-jPx"/>
                     <connections>
-                        <outlet property="scrollView" destination="M5U-pK-d11" id="bsI-x2-2NQ"/>
-                        <outlet property="vwVista" destination="C5k-cV-yna" id="HGo-Ud-mMC"/>
+                        <outlet property="scrollView" destination="M5U-pK-d11" id="WFS-ka-MUG"/>
+                        <outlet property="vwVista" destination="C5k-cV-yna" id="WQH-hH-Gn2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fE-OT-zSU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3761" y="-1155"/>
+            <point key="canvasLocation" x="3754" y="-1155"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="d5d-kf-BJY">
@@ -1317,7 +1317,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3bJ-83-Et3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2942" y="-1155"/>
+            <point key="canvasLocation" x="2941.5999999999999" y="-1155.472263868066"/>
         </scene>
     </scenes>
     <resources>
@@ -1338,7 +1338,7 @@
         <image name="timer" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CUZ-Si-kZA"/>
+        <segue reference="kRp-2X-Lid"/>
         <segue reference="ZWC-wi-XXe"/>
     </inferredMetricsTieBreakers>
 </document>
