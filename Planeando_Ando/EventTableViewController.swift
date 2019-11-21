@@ -30,6 +30,10 @@ class EventTableViewController: UITableViewController {
         popOver.frame = CGRect(x: self.view.frame.width - 127, y: 0, width: 127, height: 127)
     }
     
+    @IBAction func dismissPopOver(_ sender: Any) {
+        print("dismiss")
+        self.popOver.removeFromSuperview()
+    }
     
     
 
