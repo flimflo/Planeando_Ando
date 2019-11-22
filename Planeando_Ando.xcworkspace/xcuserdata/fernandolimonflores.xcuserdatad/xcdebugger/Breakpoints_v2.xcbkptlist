@@ -7,16 +7,96 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "D8DC037E-2E8C-4224-B51B-831D8104E68F"
+            uuid = "DC4B9916-0500-47FA-93AF-0FE52C3FEE0F"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Planeando_Ando/RegisterViewController.swift"
+            filePath = "Planeando_Ando/EventTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "169"
-            endingLineNumber = "169"
-            landmarkName = "keyboardWillShow(notification:)"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "addPressed(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DAA6E87D-7F3C-4CD1-8D4D-4312BBA8EF35"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Planeando_Ando/EventTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "74"
+            endingLineNumber = "74"
+            landmarkName = "loadData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DAA6E87D-7F3C-4CD1-8D4D-4312BBA8EF35 - 7d93eb041183411a"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Planeando_Ando.EventTableViewController.loadData() -&gt; ()"
+                  moduleName = "Planeando_Ando"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fernandolimonflores/Desktop/Planeando_Ando/Planeando_Ando/EventTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "55">
+               </Location>
+               <Location
+                  uuid = "DAA6E87D-7F3C-4CD1-8D4D-4312BBA8EF35 - ed540deba725d178"
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Planeando_Ando.EventTableViewController.loadData() -&gt; ()"
+                  moduleName = "Planeando_Ando"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/fernandolimonflores/Desktop/Planeando_Ando/Planeando_Ando/EventTableViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "63"
+                  endingLineNumber = "63"
+                  offsetFromSymbolStart = "242">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FA8F30B6-AC36-4314-ADCB-7A6CB9750B20"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Planeando_Ando/EventTableViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "loadData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A34F088E-9987-40D0-8CCF-B0BA245ACEAC"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Planeando_Ando/Informacion_ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "obtenerFecha()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

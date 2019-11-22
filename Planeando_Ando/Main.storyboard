@@ -396,7 +396,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" id="P43-MA-wtv">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="Cell" id="P43-MA-wtv">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P43-MA-wtv" id="Lxj-ep-ht1">
@@ -404,6 +404,9 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <gestureRecognizers/>
+                                <connections>
+                                    <segue destination="uoi-RM-jWC" kind="push" identifier="goToTab" trigger="accessoryAction" id="2XA-zv-JBu"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -440,6 +443,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="107" height="30"/>
                                     <state key="normal" title="Nuevo evento"/>
                                     <connections>
+                                        <action selector="dismissPopOver:" destination="Iat-7a-iIn" eventType="touchUpInside" id="IMW-Lm-tFZ"/>
                                         <segue destination="HOd-fA-zXp" kind="push" id="MbC-9T-f53"/>
                                     </connections>
                                 </button>
@@ -690,7 +694,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2JL-88-ngE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4743.1999999999998" y="-421.43928035982015"/>
+            <point key="canvasLocation" x="4759" y="-457"/>
         </scene>
         <!--Info-->
         <scene sceneID="qMA-cS-74t">
@@ -919,6 +923,10 @@
                                                 <state key="normal" title="Crear">
                                                     <color key="titleColor" red="0.17631575469999999" green="0.18027237060000001" blue="0.18856686349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="crearEvento:" destination="HOd-fA-zXp" eventType="touchUpInside" id="TLU-kG-6En"/>
+                                                    <segue destination="Iat-7a-iIn" kind="push" id="6GR-yv-kuO"/>
+                                                </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="5VR-Bg-eIJ">
                                                 <rect key="frame" x="25" y="107.5" width="17.5" height="25.5"/>
@@ -956,6 +964,7 @@
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" red="0.15799340605735779" green="0.78705894947052002" blue="0.32603177428245544" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstItem="aPf-5U-3Hk" firstAttribute="centerX" secondItem="C5k-cV-yna" secondAttribute="centerX" id="2HQ-O8-BCV"/>
                                             <constraint firstItem="OZr-cc-zEQ" firstAttribute="leading" secondItem="C5k-cV-yna" secondAttribute="leading" constant="25" id="2gE-Ja-fND"/>
@@ -1000,6 +1009,9 @@
                                             <constraint firstItem="CHV-Kp-0R5" firstAttribute="top" secondItem="WbY-3d-9Le" secondAttribute="bottom" constant="45" id="xyM-8x-Cfe"/>
                                             <constraint firstAttribute="trailing" secondItem="UFf-Hq-PYh" secondAttribute="trailing" constant="25" id="yy6-9Z-7D8"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="A6Q-WX-AAh" appends="YES" id="PjX-6L-iba"/>
+                                        </connections>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -1023,11 +1035,21 @@
                     <tabBarItem key="tabBarItem" title="Info" image="info.circle" catalog="system" id="1QL-Ro-03n"/>
                     <navigationItem key="navigationItem" id="7RX-Ld-jPx"/>
                     <connections>
+                        <outlet property="dpFecha" destination="gNc-sP-JQF" id="d4g-kr-e8u"/>
+                        <outlet property="dpHora" destination="Pge-lY-WEz" id="gCY-l0-QNd"/>
                         <outlet property="scrollView" destination="M5U-pK-d11" id="bsI-x2-2NQ"/>
+                        <outlet property="tfDescripcion" destination="WbY-3d-9Le" id="0UN-sz-A34"/>
+                        <outlet property="tfLugar" destination="UFf-Hq-PYh" id="mdn-dO-VsM"/>
+                        <outlet property="tfNombre" destination="nL1-ob-K14" id="DsI-dZ-9mU"/>
                         <outlet property="vwVista" destination="C5k-cV-yna" id="HGo-Ud-mMC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fE-OT-zSU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="A6Q-WX-AAh">
+                    <connections>
+                        <action selector="tapDismiss:" destination="HOd-fA-zXp" id="d5S-ne-BEd"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3677.5999999999999" y="-832.53373313343332"/>
         </scene>
@@ -1050,7 +1072,7 @@
         <image name="timer" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="CUZ-Si-kZA"/>
-        <segue reference="ZWC-wi-XXe"/>
+        <segue reference="kRp-2X-Lid"/>
+        <segue reference="YIP-7c-lQ2"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,8 +7,14 @@
 //
 
 import UIKit
+import FirebaseFirestore
 
 class EventTableViewController: UITableViewController {
+    
+    var db:Firestore!
+    
+    var eventArray = [Event]()
+    var count = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,19 +26,84 @@ class EventTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         //self.navigationItem.rightBarButtonItem = self.editButtonItem
         
+        db = Firestore.firestore()
+        //loadData()
+        checkForUpdates()
+        
     }
     
     @IBOutlet var popOver: UIView!
     
     @IBAction func addPressed(_ sender: UIBarButtonItem) {
         self.view.addSubview(popOver)
-        print(popOver.center)
+
         popOver.frame = CGRect(x: self.view.frame.width - 127, y: 0, width: 127, height: 127)
     }
     
     @IBAction func dismissPopOver(_ sender: Any) {
-        print("dismiss")
         self.popOver.removeFromSuperview()
+    }
+    
+    func loadData() {
+        db.collection("events").whereField("members", arrayContains: "flimflo2@hotmail.com").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                for document in querySnapshot!.documents {
+                    print("\(document.documentID) => \(document.data())")
+                    
+                    let datos = document.data()
+                    let title = datos["title"] as? String ?? ""
+                    let description = datos["description"] as? String ?? ""
+                    let place = datos["place"] as? String ?? ""
+                    let status = datos["status"] as? String ?? ""
+                    let joinId = datos["joinId"] as? String ?? ""
+                    let startTime = datos["startTime"] as? Date ?? Date()
+                    let members = datos["members"] as? Array<String> ?? [String]()
+                    
+                    let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members)
+                    
+                    self.eventArray.append(evento)
+                }
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+                self.checkForUpdates()
+            }
+        }
+    }
+    
+    
+    func checkForUpdates() {
+        db.collection("events").order(by: "startTime", descending: true).whereField("members", arrayContains: "flimflo2@hotmail.com").whereField("startTime", isGreaterThan: Date()).addSnapshotListener {
+                querySnapshot, error in
+                
+                guard let snapshot = querySnapshot else {return}
+                
+                snapshot.documentChanges.forEach {
+                    diff in
+                    
+                    if diff.type == .added {
+                        let datos = diff.document.data()
+                        let title = datos["title"] as? String ?? ""
+                        let description = datos["description"] as? String ?? ""
+                        let place = datos["place"] as? String ?? ""
+                        let status = datos["status"] as? String ?? ""
+                        let joinId = datos["joinId"] as? String ?? ""
+                        let startTime = datos["startTime"] as? Date ?? Date()
+                        let members = datos["members"] as? Array<String> ?? [String]()
+                        
+                        let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members)
+                        
+                        self.eventArray.append(evento)
+                        self.count = self.count + 1
+                        print(self.count)
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+        }
     }
     
     
@@ -41,23 +112,26 @@ class EventTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return eventArray.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
 
-        // Configure the cell...
+        let event = eventArray[indexPath.row]
+        
+        cell.textLabel?.text = "\(event.title)"
+        //cell.detailTextLabel?.text = "\(sweet.timeStamp)"
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -103,6 +177,20 @@ class EventTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "goToTab", sender: self)
+        
+        //tableView.deselectRow(at: indexPath, animated: true)
+    }
+    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationVC = segue.destination as! TodoListViewController
+        
+        if let indexPath = tableView.indexPathForSelectedRow{
+            destinationVC.selectedCategory = categories?[indexPath.row]
+        }
+    }*/
 
 }
 
