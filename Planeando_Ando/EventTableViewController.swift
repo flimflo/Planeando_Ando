@@ -177,20 +177,25 @@ class EventTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        performSegue(withIdentifier: "goToTab", sender: self)
-        
-        //tableView.deselectRow(at: indexPath, animated: true)
-    }
-    /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC = segue.destination as! TodoListViewController
-        
-        if let indexPath = tableView.indexPathForSelectedRow{
-            destinationVC.selectedCategory = categories?[indexPath.row]
-        }
-    }*/
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+           performSegue(withIdentifier: "goToTab", sender: self)
+           print("row seleccionada: \(indexPath.row)")
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "goToTab"){
+               
+            let vistaNueva = segue.destination as! Class_TabBar
+               
+            let indexPath = tableView.indexPathForSelectedRow!
+               
+            vistaNueva.jug = eventArray[indexPath.row].title
+        }
+        else{
+               /*let vistaAgrega = segue.destination as! ViewControllerAgregar
+               vistaAgrega.delegado = self*/
+        }
+    }
 }
 
