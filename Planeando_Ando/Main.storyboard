@@ -248,9 +248,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background_pink" translatesAutoresizingMaskIntoConstraints="NO" id="ns8-Hj-HXi">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background_pink" translatesAutoresizingMaskIntoConstraints="NO" id="ns8-Hj-HXi">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pdT-Ta-4gM">
                                 <rect key="frame" x="23" y="83" width="343" height="535"/>
@@ -321,13 +320,17 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ns8-Hj-HXi" firstAttribute="top" secondItem="fxq-LK-1OE" secondAttribute="bottom" id="EYk-qZ-dZU"/>
+                            <constraint firstAttribute="trailing" secondItem="ns8-Hj-HXi" secondAttribute="trailing" id="Iz8-i3-BeJ"/>
                             <constraint firstItem="G8E-r3-c8B" firstAttribute="top" secondItem="1yO-Gz-bHA" secondAttribute="bottom" constant="38" id="NoD-iY-HZq"/>
                             <constraint firstItem="G8E-r3-c8B" firstAttribute="top" secondItem="pdT-Ta-4gM" secondAttribute="bottom" constant="49" id="P5w-LD-2Rx"/>
                             <constraint firstItem="1yO-Gz-bHA" firstAttribute="top" secondItem="fxq-LK-1OE" secondAttribute="bottom" constant="50" id="UnQ-bz-WYo"/>
+                            <constraint firstItem="G8E-r3-c8B" firstAttribute="top" secondItem="ns8-Hj-HXi" secondAttribute="bottom" id="Vhc-o8-Nku"/>
                             <constraint firstItem="pdT-Ta-4gM" firstAttribute="leading" secondItem="b1r-c3-eoq" secondAttribute="leading" constant="23" id="aNy-MR-IrG"/>
                             <constraint firstItem="1yO-Gz-bHA" firstAttribute="leading" secondItem="b1r-c3-eoq" secondAttribute="leading" constant="12" id="fXB-Iy-vlb"/>
                             <constraint firstAttribute="trailing" secondItem="pdT-Ta-4gM" secondAttribute="trailing" constant="9" id="hcF-gr-nv3"/>
                             <constraint firstItem="pdT-Ta-4gM" firstAttribute="top" secondItem="fxq-LK-1OE" secondAttribute="bottom" constant="39" id="usq-UB-CWp"/>
+                            <constraint firstItem="ns8-Hj-HXi" firstAttribute="leading" secondItem="b1r-c3-eoq" secondAttribute="leading" id="wTi-wG-OaD"/>
                             <constraint firstAttribute="trailing" secondItem="1yO-Gz-bHA" secondAttribute="trailing" constant="20" id="z9a-7q-Sl1"/>
                         </constraints>
                     </view>
@@ -392,27 +395,26 @@
             <objects>
                 <tableViewController id="Iat-7a-iIn" customClass="EventTableViewController" customModule="Planeando_Ando" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Aup-j9-lbL">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="Cell" id="P43-MA-wtv">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="P43-MA-wtv">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P43-MA-wtv" id="Lxj-ep-ht1">
-                                    <rect key="frame" x="0.0" y="0.0" width="316" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <segue destination="uoi-RM-jWC" kind="push" identifier="goToTab" trigger="accessoryAction" id="2XA-zv-JBu"/>
+                                    <segue destination="uoi-RM-jWC" kind="push" id="2vz-aY-jXG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="Iat-7a-iIn" id="aEX-ZA-zPs"/>
                             <outlet property="delegate" destination="Iat-7a-iIn" id="DH4-nv-87n"/>
-                            <outletCollection property="gestureRecognizers" destination="beX-zU-4D7" appends="YES" id="tla-uI-2na"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="X3l-Uz-HK2">
@@ -427,11 +429,6 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ngl-gw-yED" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="beX-zU-4D7">
-                    <connections>
-                        <action selector="dismissPopOver:" destination="Iat-7a-iIn" id="99H-gC-8Nu"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <view contentMode="scaleToFill" id="hfV-cw-CfL">
                     <rect key="frame" x="0.0" y="0.0" width="127" height="127"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -443,7 +440,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="107" height="30"/>
                                     <state key="normal" title="Nuevo evento"/>
                                     <connections>
-                                        <action selector="dismissPopOver:" destination="Iat-7a-iIn" eventType="touchUpInside" id="IMW-Lm-tFZ"/>
                                         <segue destination="HOd-fA-zXp" kind="push" id="MbC-9T-f53"/>
                                     </connections>
                                 </button>
@@ -494,7 +490,7 @@
                         <viewControllerLayoutGuide type="bottom" id="MhX-DF-MfY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="L6h-zA-lh7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fecha:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxa-Ri-RIS">
@@ -701,7 +697,7 @@
             <objects>
                 <viewController id="6DQ-ht-Rtt" customClass="Informacion_ViewController" customModule="Planeando_Ando" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gyo-2U-VTr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XI5-V6-UEe">
@@ -810,7 +806,7 @@
             <objects>
                 <viewController id="HOd-fA-zXp" customClass="Informacion_ViewController" customModule="Planeando_Ando" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hrJ-uE-qcC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M5U-pK-d11">
@@ -1072,7 +1068,8 @@
         <image name="timer" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="kRp-2X-Lid"/>
+        <segue reference="MbC-9T-f53"/>
+        <segue reference="6GR-yv-kuO"/>
         <segue reference="YIP-7c-lQ2"/>
     </inferredMetricsTieBreakers>
 </document>

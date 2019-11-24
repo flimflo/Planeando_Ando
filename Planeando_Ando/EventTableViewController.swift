@@ -15,11 +15,14 @@ class EventTableViewController: UITableViewController {
     
     var eventArray = [Event]()
     var count = 0
-
+    var tap : UITapGestureRecognizer!
+    
+    @IBOutlet var popOver: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
-
+        tap = UITapGestureRecognizer(target: self, action: #selector(dismissPopOver))
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -32,16 +35,16 @@ class EventTableViewController: UITableViewController {
         
     }
     
-    @IBOutlet var popOver: UIView!
-    
     @IBAction func addPressed(_ sender: UIBarButtonItem) {
         self.view.addSubview(popOver)
-
+        view.addGestureRecognizer(tap)
         popOver.frame = CGRect(x: self.view.frame.width - 127, y: 0, width: 127, height: 127)
     }
     
-    @IBAction func dismissPopOver(_ sender: Any) {
+    @IBAction func dismissPopOver() {
+        view.endEditing(true)
         self.popOver.removeFromSuperview()
+        view.removeGestureRecognizer(tap)
     }
     
     func loadData() {
@@ -53,11 +56,11 @@ class EventTableViewController: UITableViewController {
                     print("\(document.documentID) => \(document.data())")
                     
                     let datos = document.data()
-                    let title = datos["title"] as? String ?? ""
-                    let description = datos["description"] as? String ?? ""
-                    let place = datos["place"] as? String ?? ""
-                    let status = datos["status"] as? String ?? ""
-                    let joinId = datos["joinId"] as? String ?? ""
+                    let title = datos["title"] as! String
+                    let description = datos["description"] as! String
+                    let place = datos["place"] as! String
+                    let status = datos["status"] as! String
+                    let joinId = datos["joinId"] as! String
                     let startTime = datos["startTime"] as? Date ?? Date()
                     let members = datos["members"] as? Array<String> ?? [String]()
                     
@@ -178,10 +181,11 @@ class EventTableViewController: UITableViewController {
     }
     */
 
+    /*
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           performSegue(withIdentifier: "goToTab", sender: self)
+           //performSegue(withIdentifier: "goToTab", sender: self)
            print("row seleccionada: \(indexPath.row)")
-    }
+    }*/
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "goToTab"){
@@ -189,7 +193,7 @@ class EventTableViewController: UITableViewController {
             let vistaNueva = segue.destination as! Class_TabBar
                
             let indexPath = tableView.indexPathForSelectedRow!
-               
+            print(indexPath)
             vistaNueva.jug = eventArray[indexPath.row].title
         }
         else{
