@@ -38,7 +38,7 @@ class EventTableViewController: UITableViewController {
     @IBAction func addPressed(_ sender: UIBarButtonItem) {
         self.view.addSubview(popOver)
         view.addGestureRecognizer(tap)
-        popOver.frame = CGRect(x: self.view.frame.width - 127, y: 0, width: 127, height: 127)
+        popOver.frame = CGRect(x: self.view.frame.width - 190, y: 0, width: 190, height: 127)
     }
     
     @IBAction func dismissPopOver() {

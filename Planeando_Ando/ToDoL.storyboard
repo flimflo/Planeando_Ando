@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xtJ-Wh-GoO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xtJ-Wh-GoO">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ToDoL-->
+        <!--Lista de Pendientes-->
         <scene sceneID="Ycf-46-tkP">
             <objects>
-                <tableViewController id="vcD-dP-xIa" customClass="CategoryViewController" customModule="ToDoL" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="vcD-dP-xIa" customClass="CategoryViewController" customModule="Planeando_Ando" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="dAD-mX-J5i">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -29,7 +29,7 @@
                             <outlet property="delegate" destination="vcD-dP-xIa" id="4f3-Wq-J33"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="ToDoL" id="jSs-Kk-QU5">
+                    <navigationItem key="navigationItem" title="Lista de Pendientes" id="jSs-Kk-QU5">
                         <barButtonItem key="rightBarButtonItem" style="plain" systemItem="add" id="6A4-6N-Z3h">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="1726" y="113"/>
         </scene>
-        <!--Items-->
+        <!--Pendientes-->
         <scene sceneID="oNs-sh-rcY">
             <objects>
-                <tableViewController id="gi0-pK-uNL" customClass="TodoListViewController" customModule="ToDoL" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="gi0-pK-uNL" customClass="TodoListViewController" customModule="Planeando_Ando" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="n5D-AZ-cm8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -79,8 +79,9 @@
                     <toolbarItems>
                         <barButtonItem title="Item" id="Mf7-pz-vXs"/>
                     </toolbarItems>
-                    <navigationItem key="navigationItem" title="Items" id="hSa-B0-oXb">
+                    <navigationItem key="navigationItem" title="Pendientes" id="hSa-B0-oXb">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="XHf-hg-TeV">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <action selector="addButtonPressed:" destination="gi0-pK-uNL" id="sXW-7f-0aR"/>
                             </connections>
@@ -103,7 +104,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="hNg-vq-6uP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" red="0.039215686274509803" green="0.51764705882352935" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.60228371619999999" green="0.88342934849999999" blue="0.87667727470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.039215686274509803" green="0.51764705882352935" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
