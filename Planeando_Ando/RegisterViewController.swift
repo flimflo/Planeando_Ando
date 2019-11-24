@@ -30,9 +30,9 @@ class RegisterViewController: UIViewController {
         btRegistrarse.layer.cornerRadius = 0.1 * btRegistrarse.bounds.size.width
                
         viewBotones.layer.shadowColor = UIColor.black.cgColor
-        viewBotones.layer.shadowOpacity = 1
+        viewBotones.layer.shadowOpacity = 0.35
         viewBotones.layer.shadowOffset = .zero
-        viewBotones.layer.shadowRadius = 10
+        viewBotones.layer.shadowRadius = 2
     }
 
     override func didReceiveMemoryWarning() {

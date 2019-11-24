@@ -29,11 +29,11 @@ class LogInViewController: UIViewController {
         imgLogo.layer.cornerRadius = 0.1 * imgLogo.bounds.size.width
 
         btIniciar_Sesion.layer.cornerRadius = 0.1 * btIniciar_Sesion.bounds.size.width
-               
+
         viewBotones.layer.shadowColor = UIColor.black.cgColor
-        viewBotones.layer.shadowOpacity = 1
+        viewBotones.layer.shadowOpacity = 0.35
         viewBotones.layer.shadowOffset = .zero
-        viewBotones.layer.shadowRadius = 10
+        viewBotones.layer.shadowRadius = 2
     }
 
     override func didReceiveMemoryWarning() {

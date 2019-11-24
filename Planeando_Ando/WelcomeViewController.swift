@@ -18,19 +18,13 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        imgLogo.layer.cornerRadius = 0.1 * imgLogo.bounds.size.width
-
-        btIniciar_Sesion.layer.cornerRadius = 0.1 * btIniciar_Sesion.bounds.size.width
-        
-        btRegistrarse.layer.cornerRadius = 0.1 * btRegistrarse.bounds.size.width
+        btIniciar_Sesion.layer.cornerRadius = 5
+        btRegistrarse.layer.cornerRadius = 5
  
-        
         viewBotones.layer.shadowColor = UIColor.black.cgColor
-        viewBotones.layer.shadowOpacity = 1
+        viewBotones.layer.shadowOpacity = 0.35
         viewBotones.layer.shadowOffset = .zero
-        viewBotones.layer.shadowRadius = 10
-    
+        viewBotones.layer.shadowRadius = 2
     }
 
     override func didReceiveMemoryWarning() {
