@@ -9,12 +9,16 @@
 import UIKit
 import FirebaseFirestore
 import Firebase
+import Alamofire
+import SwiftyJSON
 
 class Informacion_ViewController: UIViewController {
 
     var db:Firestore!
     
     var user = Auth.auth().currentUser?.email
+    
+    var prueba:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +30,7 @@ class Informacion_ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        obtenerEventoId()
     }
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -45,8 +50,9 @@ class Informacion_ViewController: UIViewController {
             
             let startTime  = obtenerFecha()
             
-            
-            let newEvent = Event(title: title, description: description, startTime: startTime, place: place, status: "Activo", joinId: "ABC", members: [user!])
+            let joinId = prueba
+             
+            let newEvent = Event(title: title, description: description, startTime: startTime, place: place, status: "Activo", joinId:joinId, members: [user!])
                    
                    var ref:DocumentReference? = nil
                    ref = db.collection("events").addDocument(data: newEvent.dictionary) {
@@ -85,6 +91,36 @@ class Informacion_ViewController: UIViewController {
         return fechaYHora
         
     }
+    
+    func obtenerEventoId(){
+        
+        var lastID: String?
+        let myURL = NSURL(string:"https://us-central1-planeando-ando.cloudfunctions.net/generateUserId");
+
+        let request = NSMutableURLRequest(url:myURL! as URL);
+        //request.httpMethod = "GET" // This line is not need
+        // Excute HTTP Request
+        let task = URLSession.shared.dataTask(with: request as URLRequest) {
+            data, response, error in
+
+            // Check for error
+            if error != nil
+            {
+                print("error=\(String(describing: error))")
+                return
+            }
+
+            // Print out response string
+            let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
+            print("responseString = \(responseString!)")
+            lastID = "\(responseString!)" // Sets some variable or text field. Not that its unwrapped because its an optional.
+            self.prueba = lastID!
+        }
+
+        task.resume()
+        
+    }
+    
     
     @objc func keyboardWillShow(notification: NSNotification) {
 

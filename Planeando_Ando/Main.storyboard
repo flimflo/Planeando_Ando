@@ -574,9 +574,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="K7c-6F-dna" kind="popover" trigger="accessoryAction" popoverAnchorView="3cb-bN-MMw" id="16p-fX-FxB">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <segue destination="K7c-6F-dna" kind="push" trigger="accessoryAction" id="16p-fX-FxB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -816,7 +814,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="eVd-O0-ESq">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="2048" height="647"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XI5-V6-UEe">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
@@ -1664,7 +1662,6 @@
         <image name="timer" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="MbC-9T-f53"/>
         <segue reference="6GR-yv-kuO"/>
         <segue reference="ZWC-wi-XXe"/>
     </inferredMetricsTieBreakers>

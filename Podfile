@@ -17,6 +17,8 @@ pod 'Firebase/Core'
 pod 'RealmSwift'
 pod 'SwipeCellKit'
 pod 'ChameleonFramework'
+pod 'Alamofire'
+pod 'SwiftyJSON'
 
 
 end

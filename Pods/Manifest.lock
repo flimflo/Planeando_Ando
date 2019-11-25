@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.9.1)
   - BoringSSL-GRPC (0.0.3):
     - BoringSSL-GRPC/Implementation (= 0.0.3)
     - BoringSSL-GRPC/Interface (= 0.0.3)
@@ -140,9 +141,11 @@ PODS:
   - RealmSwift (3.19.0):
     - Realm (= 3.19.0)
   - SVProgressHUD (2.2.5)
+  - SwiftyJSON (5.0.0)
   - SwipeCellKit (2.7.1)
 
 DEPENDENCIES:
+  - Alamofire
   - ChameleonFramework
   - Firebase
   - Firebase/Auth
@@ -152,10 +155,12 @@ DEPENDENCIES:
   - Firebase/Storage
   - RealmSwift
   - SVProgressHUD
+  - SwiftyJSON
   - SwipeCellKit
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - BoringSSL-GRPC
     - ChameleonFramework
     - Firebase
@@ -182,9 +187,11 @@ SPEC REPOS:
     - Realm
     - RealmSwift
     - SVProgressHUD
+    - SwiftyJSON
     - SwipeCellKit
 
 SPEC CHECKSUMS:
+  Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   BoringSSL-GRPC: db8764df3204ccea016e1c8dd15d9a9ad63ff318
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Firebase: 5e6b7b12bf9adb90986688edc06b156c37e109cd
@@ -211,8 +218,9 @@ SPEC CHECKSUMS:
   Realm: 995d585bcf699aaff226715886c849a29dd3d07f
   RealmSwift: 35f284a537989f2187b413e5917091948cb87a3f
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SwipeCellKit: 3972254a826da74609926daf59b08d6c72e619ea
 
-PODFILE CHECKSUM: 5f24ac7de053669e9dc76dfaad59fe7df76a86fb
+PODFILE CHECKSUM: efbe48d16555071fcbb3321364a59b5e5317124b
 
 COCOAPODS: 1.8.3
