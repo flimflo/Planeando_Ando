@@ -8,10 +8,13 @@
 
 import UIKit
 import FirebaseFirestore
+import Firebase
 
 class EventTableViewController: UITableViewController {
     
     var db:Firestore!
+    
+    var user = Auth.auth().currentUser?.email
     
     var eventArray = [Event]()
     var count = 0
@@ -48,7 +51,7 @@ class EventTableViewController: UITableViewController {
     }
     
     func loadData() {
-        db.collection("events").whereField("members", arrayContains: "flimflo2@hotmail.com").getDocuments() { (querySnapshot, err) in
+        db.collection("events").whereField("members", arrayContains: user).whereField("startTime", isGreaterThan: Date()).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
             } else {
@@ -78,7 +81,7 @@ class EventTableViewController: UITableViewController {
     
     
     func checkForUpdates() {
-        db.collection("events").order(by: "startTime", descending: true).whereField("members", arrayContains: "flimflo2@hotmail.com").whereField("startTime", isGreaterThan: Date()).addSnapshotListener {
+        db.collection("events").order(by: "startTime", descending: true).whereField("members", arrayContains: user).addSnapshotListener {
                 querySnapshot, error in
                 
                 guard let snapshot = querySnapshot else {return}

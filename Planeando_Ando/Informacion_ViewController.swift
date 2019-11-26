@@ -9,8 +9,6 @@
 import UIKit
 import FirebaseFirestore
 import Firebase
-import Alamofire
-import SwiftyJSON
 
 class Informacion_ViewController: UIViewController {
 

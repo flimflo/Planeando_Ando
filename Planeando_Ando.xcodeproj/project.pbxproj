@@ -17,6 +17,7 @@
 		6123C8542378DF35000CDC7D /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6123C8532378DF35000CDC7D /* EventTableViewController.swift */; };
 		6123C8562378EABC000CDC7D /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6123C8552378EABC000CDC7D /* NewEventViewController.swift */; };
 		612955EC23873FC3004B7F80 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612955EB23873FC3004B7F80 /* Event.swift */; };
+		61418F94238D87580088D520 /* UnirseEventoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61418F93238D87580088D520 /* UnirseEventoViewController.swift */; };
 		614621822350DD070028F7C7 /* Informacion_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614621812350DD070028F7C7 /* Informacion_ViewController.swift */; };
 		6179528023505A4600F3BD62 /* ToDo_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6179527F23505A4600F3BD62 /* ToDo_ViewController.swift */; };
 		61DDDED023753297008AF10F /* TodoListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DDDECD23753296008AF10F /* TodoListViewController.swift */; };
@@ -52,6 +53,7 @@
 		6123C8532378DF35000CDC7D /* EventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		6123C8552378EABC000CDC7D /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		612955EB23873FC3004B7F80 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		61418F93238D87580088D520 /* UnirseEventoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnirseEventoViewController.swift; sourceTree = "<group>"; };
 		614621812350DD070028F7C7 /* Informacion_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Informacion_ViewController.swift; sourceTree = "<group>"; };
 		6179527F23505A4600F3BD62 /* ToDo_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDo_ViewController.swift; sourceTree = "<group>"; };
 		61DDDECD23753296008AF10F /* TodoListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoListViewController.swift; sourceTree = "<group>"; };
@@ -165,6 +167,7 @@
 				6106D5FA23500DD70094C6F7 /* QR_ViewController.swift */,
 				6106D5FC23500F810094C6F7 /* Contacto_ViewController.swift */,
 				6123C8552378EABC000CDC7D /* NewEventViewController.swift */,
+				61418F93238D87580088D520 /* UnirseEventoViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -377,6 +380,7 @@
 				63E28B311B9A337600FBF6E0 /* LogInViewController.swift in Sources */,
 				61DDDEDE2375338D008AF10F /* ChatViewController.swift in Sources */,
 				612955EC23873FC3004B7F80 /* Event.swift in Sources */,
+				61418F94238D87580088D520 /* UnirseEventoViewController.swift in Sources */,
 				63E28B2F1B9A337600FBF6E0 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

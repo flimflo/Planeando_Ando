@@ -3,7 +3,6 @@
 //  Planeando_Ando
 //
 //  Created by Mildred Irais Gil Melchor on 11/22/19.
-//  Copyright © 2019 London App Brewery. All rights reserved.
 //
 
 import UIKit
