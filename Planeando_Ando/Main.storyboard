@@ -426,7 +426,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <connections>
-                                    <segue destination="uoi-RM-jWC" kind="push" id="2vz-aY-jXG"/>
+                                    <segue destination="uoi-RM-jWC" kind="push" identifier="goToTab" id="2vz-aY-jXG"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

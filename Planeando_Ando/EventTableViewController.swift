@@ -17,7 +17,7 @@ class EventTableViewController: UITableViewController {
     var user = Auth.auth().currentUser?.email
     
     var eventArray = [Event]()
-    var count = 0
+    
     var tap : UITapGestureRecognizer!
     
     @IBOutlet var popOver: UIView!
@@ -102,8 +102,6 @@ class EventTableViewController: UITableViewController {
                         let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members)
                         
                         self.eventArray.append(evento)
-                        self.count = self.count + 1
-                        print(self.count)
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
@@ -198,6 +196,7 @@ class EventTableViewController: UITableViewController {
             let indexPath = tableView.indexPathForSelectedRow!
             print(indexPath)
             vistaNueva.jug = eventArray[indexPath.row].title
+            vistaNueva.prueba = eventArray[indexPath.row]
         }
         else{
                /*let vistaAgrega = segue.destination as! ViewControllerAgregar

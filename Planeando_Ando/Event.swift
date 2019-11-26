@@ -36,6 +36,19 @@ struct Event {
     }
 }
 
+extension Event {
+    
+    init(){
+        title = ""
+        description = ""
+        startTime = Date()
+        place = ""
+        status = ""
+        joinId = ""
+        members = [String]()
+    }
+}
+
 extension Event : DocumentSerializable {
     init?(dictionary: [String : Any]) {
         guard let title = dictionary["tile"] as? String,

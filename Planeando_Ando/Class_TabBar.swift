@@ -11,9 +11,12 @@ import UIKit
 class Class_TabBar: UITabBarController {
 
     var jug = ""
+    var prueba = Event()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print(jug)
+        print(prueba)
         // Do any additional setup after loading the view.
         //self.navigationItem.hidesBackButton = true
     }

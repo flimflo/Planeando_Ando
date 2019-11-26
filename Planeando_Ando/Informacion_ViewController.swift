@@ -110,7 +110,7 @@ class Informacion_ViewController: UIViewController {
 
             // Print out response string
             let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
-            print("responseString = \(responseString!)")
+            
             lastID = "\(responseString!)" // Sets some variable or text field. Not that its unwrapped because its an optional.
             self.prueba = lastID!
         }
