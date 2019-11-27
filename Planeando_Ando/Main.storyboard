@@ -513,6 +513,8 @@
                     <connections>
                         <segue destination="6DQ-ht-Rtt" kind="relationship" relationship="viewControllers" id="Udv-ch-XOd"/>
                         <segue destination="5rP-ZH-cRI" kind="relationship" relationship="viewControllers" id="Og9-zQ-OmE"/>
+                        <segue destination="ahR-Tn-BwV" kind="relationship" relationship="viewControllers" id="QE0-6h-T3t"/>
+                        <segue destination="H3w-sD-eqd" kind="relationship" relationship="viewControllers" id="8tw-c7-jxe"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VxQ-T1-REI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -549,9 +551,6 @@
                                 <rect key="frame" x="116" y="475" width="143" height="96"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Abrir Lista"/>
-                                <connections>
-                                    <segue destination="H3w-sD-eqd" kind="modal" id="YIP-7c-lQ2"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D3w-iA-HTO">
                                 <rect key="frame" x="144" y="221" width="66" height="30"/>
@@ -575,9 +574,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="separatorColor" red="0.37045666575431824" green="0.7733033299446106" blue="0.79589742422103882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <imageView key="tableFooterView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoBackground" id="OjO-Vf-Lm5">
                             <rect key="frame" x="0.0" y="134" width="375" height="639"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="tintColor" red="0.77678936719894409" green="0.89823335409164429" blue="0.91549235582351685" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </imageView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="idCell" textLabel="fUc-G7-92j" detailTextLabel="jyE-p5-UE2" imageView="qTF-dK-v8G" rowHeight="78" style="IBUITableViewCellStyleSubtitle" id="3cb-bN-MMw">
@@ -896,14 +897,14 @@
             <objects>
                 <viewController id="6DQ-ht-Rtt" customClass="Informacion_ViewController" customModule="Planeando_Ando" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gyo-2U-VTr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="eVd-O0-ESq">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="647"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="667"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XI5-V6-UEe">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pi7-a9-G5K">
                                         <rect key="frame" x="15" y="0.0" width="345" height="895"/>
@@ -1838,6 +1839,7 @@
         <image name="timer" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="Udv-ch-XOd"/>
         <segue reference="81b-zZ-Cbo"/>
     </inferredMetricsTieBreakers>
 </document>

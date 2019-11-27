@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES" initialViewController="vXZ-lx-hvc">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Flash Chat-->
+        <!--Chat Organizadores-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController storyboardIdentifier="chatVC" id="vXZ-lx-hvc" customClass="ChatViewController" customModule="Planeando_Ando" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,20 +19,23 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WpY-IA-acB" userLabel="Compose View">
-                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <rect key="frame" x="0.0" y="568" width="375" height="50"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Your Message" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W4K-YF-skl">
-                                        <rect key="frame" x="8" y="10" width="305" height="34"/>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Enter Your Message" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W4K-YF-skl">
+                                        <rect key="frame" x="8" y="10" width="305" height="35"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" returnKeyType="send"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JiI-fB-I1v">
-                                        <rect key="frame" x="321" y="10" width="46" height="30"/>
+                                        <rect key="frame" x="321" y="10" width="46" height="35"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="46" id="ZSm-he-0Hk"/>
-                                            <constraint firstAttribute="height" constant="30" id="eac-Pu-ehA"/>
+                                            <constraint firstAttribute="width" constant="46" id="OU3-Pz-DZr"/>
+                                            <constraint firstAttribute="height" constant="35" id="zW0-o7-jMd"/>
                                         </constraints>
-                                        <state key="normal" title="Send">
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="17"/>
+                                        <state key="normal" title="Enviar">
+                                            <color key="titleColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -40,20 +43,26 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.59406632179999996" green="0.88344871999999997" blue="0.87673467400000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstItem="JiI-fB-I1v" firstAttribute="top" secondItem="WpY-IA-acB" secondAttribute="top" constant="10" id="1kz-X0-4bm"/>
+                                    <constraint firstAttribute="bottom" secondItem="JiI-fB-I1v" secondAttribute="bottom" constant="5" id="FoM-4W-eiE"/>
                                     <constraint firstItem="W4K-YF-skl" firstAttribute="leading" secondItem="WpY-IA-acB" secondAttribute="leading" constant="8" id="LIw-AA-Dk0"/>
                                     <constraint firstItem="W4K-YF-skl" firstAttribute="top" secondItem="WpY-IA-acB" secondAttribute="top" constant="10" id="dTK-mk-kRm"/>
                                     <constraint firstAttribute="height" constant="50" id="dyw-Nc-T3G"/>
                                     <constraint firstItem="JiI-fB-I1v" firstAttribute="leading" secondItem="W4K-YF-skl" secondAttribute="trailing" constant="8" id="ekQ-BF-Rpc"/>
+                                    <constraint firstAttribute="bottom" secondItem="W4K-YF-skl" secondAttribute="bottom" constant="5" id="iEq-Vb-rv7"/>
                                     <constraint firstAttribute="trailing" secondItem="JiI-fB-I1v" secondAttribute="trailing" constant="8" id="oPt-DK-Ply"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="7eI-kw-TVm" userLabel="Message Table View">
-                                <rect key="frame" x="0.0" y="44" width="375" height="573"/>
+                                <rect key="frame" x="0.0" y="44" width="375" height="524"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <gestureRecognizers/>
+                                <imageView key="tableFooterView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoBackground" id="emV-QI-aGn">
+                                    <rect key="frame" x="0.0" y="100" width="375" height="618"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </imageView>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MessageCell" id="jHH-VD-leb">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
@@ -62,6 +71,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.3791949450969696" green="0.76928406953811646" blue="0.7959703803062439" alpha="0.84219820205479456" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <gestureRecognizers/>
                                     </tableViewCell>
                                 </prototypes>
@@ -79,14 +90,12 @@
                             <constraint firstAttribute="trailing" secondItem="7eI-kw-TVm" secondAttribute="trailing" id="z26-fa-Hmy"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Flash Chat" id="OGj-fw-WBv">
-                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="mz9-8w-6zi">
-                            <connections>
-                                <action selector="logOutPressed:" destination="vXZ-lx-hvc" id="AiZ-zI-Rgo"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <tabBarItem key="tabBarItem" title="Chat" image="bubble.left.fill" catalog="system" id="UrB-5E-hhw">
+                        <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBarItem>
+                    <navigationItem key="navigationItem" title="Chat Organizadores" id="OGj-fw-WBv"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="heightConstraint" destination="dyw-Nc-T3G" id="JPk-pd-pan"/>
                         <outlet property="messageTableView" destination="7eI-kw-TVm" id="OYq-98-NhQ"/>
@@ -96,7 +105,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="289" y="28"/>
+            <point key="canvasLocation" x="288.80000000000001" y="27.436281859070466"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bubble.left.fill" catalog="system" width="64" height="54"/>
+        <image name="logoBackground" width="1024" height="1024"/>
+    </resources>
 </document>
