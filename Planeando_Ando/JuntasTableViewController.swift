@@ -72,25 +72,7 @@ class JuntasTableViewController: UITableViewController {
     }
     
     func obtenerFecha(date : UIDatePicker) -> Date{
-        
-        let formatter = DateFormatter()
-        //formatter.dateFormat = "yyyy/MM/dd HH:mm"
-        formatter.dateFormat = "MM-dd-yyyy HH:mm"
-        //let someDateTime = formatter.date(from: "2016/10/08 22:31")
-        
-        //var stringf = formatter.date(from: dpFecha.)
-        let calendar = Calendar.current
-        //let datecomponent = DateComponents(calendar: calendar,year: dpFecha!.date, month: dpFecha!.date, day: dpFecha!.date)
-        let año = calendar.component(.year, from: date.date)
-        let mes = calendar.component(.month, from: date.date)
-        let dia = calendar.component(.day, from: date.date)
-        let hora = calendar.component(.hour, from: date.date)
-        let minuto = calendar.component(.minute, from: date.date)
-        
-        var fechaYHora:Date
-        
-        fechaYHora = formatter.date(from: "\(mes)-\(dia)-\(año) \(hora):\(minuto)")!
-        return fechaYHora
+        return date.date
     }
     
     
