@@ -15,11 +15,12 @@ class JuntasTableViewController: UITableViewController {
     @IBOutlet weak var pckNewDateTimeStart: UIDatePicker!
     @IBOutlet weak var pckNewDateTimeEnd: UIDatePicker!
     
-    
     var tap : UITapGestureRecognizer!
     
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
+    
+    var juntasArray = [Junta]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,12 +36,12 @@ class JuntasTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return juntasArray.count
     }
     
     @IBAction func AgregarJunta(_ sender: UIBarButtonItem) {
@@ -56,19 +57,52 @@ class JuntasTableViewController: UITableViewController {
     }
     
     @IBAction func onAddNew(_ sender: Any) {
-     
+        if let desc = tfNewDesc.text {
+            let startTime  = obtenerFecha(date : pckNewDateTimeStart)
+            let endTime  = obtenerFecha(date : pckNewDateTimeEnd)
+
+            let junta = Junta(description: desc, start: startTime, end: endTime)
+            juntasArray.append(junta)
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+            dismissPopOver()
+        }
     }
     
-    /*
+    func obtenerFecha(date : UIDatePicker) -> Date{
+        
+        let formatter = DateFormatter()
+        //formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        formatter.dateFormat = "MM-dd-yyyy HH:mm"
+        //let someDateTime = formatter.date(from: "2016/10/08 22:31")
+        
+        //var stringf = formatter.date(from: dpFecha.)
+        let calendar = Calendar.current
+        //let datecomponent = DateComponents(calendar: calendar,year: dpFecha!.date, month: dpFecha!.date, day: dpFecha!.date)
+        let año = calendar.component(.year, from: date.date)
+        let mes = calendar.component(.month, from: date.date)
+        let dia = calendar.component(.day, from: date.date)
+        let hora = calendar.component(.hour, from: date.date)
+        let minuto = calendar.component(.minute, from: date.date)
+        
+        var fechaYHora:Date
+        
+        fechaYHora = formatter.date(from: "\(mes)-\(dia)-\(año) \(hora):\(minuto)")!
+        return fechaYHora
+    }
+    
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "idCell", for: indexPath)
+        let junta = juntasArray[indexPath.row]
+        print("\(junta.description)")
+        cell.textLabel?.text = "\(junta.description)"
 
         return cell
     }
-    */
-
+    
     /*
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
