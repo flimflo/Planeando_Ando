@@ -11,7 +11,11 @@ import UIKit
 class JuntasTableViewController: UITableViewController {
 
     @IBOutlet var popOver: UIView!
-
+    @IBOutlet weak var tfNewDesc: UITextField!
+    @IBOutlet weak var pckNewDateTimeStart: UIDatePicker!
+    @IBOutlet weak var pckNewDateTimeEnd: UIDatePicker!
+    
+    
     var tap : UITapGestureRecognizer!
     
     let screenWidth = UIScreen.main.bounds.width
@@ -49,6 +53,10 @@ class JuntasTableViewController: UITableViewController {
         view.endEditing(true)
         self.popOver.removeFromSuperview()
         view.removeGestureRecognizer(tap)
+    }
+    
+    @IBAction func onAddNew(_ sender: Any) {
+     
     }
     
     /*

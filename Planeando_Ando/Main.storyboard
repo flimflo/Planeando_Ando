@@ -605,7 +605,10 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="pckNewDateTimeEnd" destination="BSr-Qh-ztG" id="Z7k-f3-YWQ"/>
+                        <outlet property="pckNewDateTimeStart" destination="Mrd-Ln-z5o" id="vXl-y8-QbH"/>
                         <outlet property="popOver" destination="bqe-Zu-B9F" id="5Bj-eE-8oS"/>
+                        <outlet property="tfNewDesc" destination="oyq-kq-Toe" id="mxt-9O-EvX"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxt-nR-cCs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -672,6 +675,9 @@
                             <state key="normal" title="Agendar">
                                 <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
+                            <connections>
+                                <action selector="onAddNew:" destination="qFW-eT-dcY" eventType="touchUpInside" id="tDE-3Y-tjm"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" red="0.61049264670000003" green="0.88340961929999995" blue="0.87661892180000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1809,7 +1815,7 @@
         <image name="timer" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UBF-e6-cRk"/>
+        <segue reference="2vz-aY-jXG"/>
         <segue reference="81b-zZ-Cbo"/>
     </inferredMetricsTieBreakers>
 </document>
