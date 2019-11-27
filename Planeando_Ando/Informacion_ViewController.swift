@@ -33,6 +33,8 @@ class Informacion_ViewController: UIViewController {
         }else{
             lbMiembros.text = "\(Evento.members.count) Miembros"
         }
+        
+        lbCodigoInvitacion.text = Evento.joinId
     }
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -42,6 +44,8 @@ class Informacion_ViewController: UIViewController {
     @IBOutlet weak var tvDescripcion: UITextView!
     @IBOutlet weak var lbFecha: UILabel!
     @IBOutlet weak var lbMiembros: UILabel!
+    @IBOutlet weak var lbCodigoInvitacion: UILabel!
+    
     
     @objc func keyboardWillShow(notification: NSNotification) {
 

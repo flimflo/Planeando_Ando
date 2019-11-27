@@ -413,7 +413,11 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Aup-j9-lbL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <imageView key="tableFooterView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoBackground" id="2Y5-tU-E8z">
+                            <rect key="frame" x="0.0" y="99.5" width="375" height="646"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="P43-MA-wtv">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
@@ -484,7 +488,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="2892" y="-30"/>
+            <point key="canvasLocation" x="2892" y="-30.134932533733135"/>
         </scene>
         <!--Colaborador-->
         <scene sceneID="wPI-qa-VRb">
@@ -495,10 +499,13 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6lY-zk-qed">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.60228371619999999" green="0.88342934849999999" blue="0.87667727470000001" alpha="0.82916845029999997" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="6DQ-ht-Rtt" kind="relationship" relationship="viewControllers" id="Udv-ch-XOd"/>
+                        <segue destination="qFW-eT-dcY" kind="relationship" relationship="viewControllers" id="Og9-zQ-OmE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VxQ-T1-REI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -558,9 +565,13 @@
             <objects>
                 <tableViewController id="qFW-eT-dcY" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nBy-ZG-Uh3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <imageView key="tableFooterView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoBackground" id="OjO-Vf-Lm5">
+                            <rect key="frame" x="0.0" y="99.5" width="375" height="639"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" id="3cb-bN-MMw">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
@@ -584,7 +595,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nxt-nR-cCs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6644" y="321"/>
+            <point key="canvasLocation" x="6644" y="320.68965517241384"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="psX-WU-7qq">
@@ -641,8 +652,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVm-1s-PGv">
-                                <rect key="frame" x="26" y="60" width="63" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripción" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVm-1s-PGv">
+                                <rect key="frame" x="26" y="60" width="88" height="21"/>
                                 <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -867,7 +878,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pi7-a9-G5K">
-                                        <rect key="frame" x="15" y="0.0" width="345" height="890"/>
+                                        <rect key="frame" x="15" y="0.0" width="345" height="895"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre de Evento" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hac-cE-lDU">
                                                 <rect key="frame" x="48" y="40" width="249.5" height="37"/>
@@ -1072,7 +1083,7 @@
                                             <constraint firstAttribute="trailing" secondItem="azl-N7-qJT" secondAttribute="trailing" constant="20" id="T74-hH-yrW"/>
                                             <constraint firstItem="G69-V4-KTW" firstAttribute="leading" secondItem="pi7-a9-G5K" secondAttribute="leading" constant="35" id="T7G-Yt-T50"/>
                                             <constraint firstItem="Kq6-es-Nxc" firstAttribute="leading" secondItem="G69-V4-KTW" secondAttribute="trailing" constant="9" id="Tga-c5-LJu"/>
-                                            <constraint firstAttribute="height" constant="890" id="UxW-Gs-gCv"/>
+                                            <constraint firstAttribute="height" constant="895" id="UxW-Gs-gCv"/>
                                             <constraint firstItem="Kq6-es-Nxc" firstAttribute="top" secondItem="OHq-h9-f1C" secondAttribute="bottom" constant="40" id="VIe-bY-l8X"/>
                                             <constraint firstAttribute="trailing" secondItem="w0q-6Z-2d0" secondAttribute="trailing" constant="35" id="Y53-M0-Yvw"/>
                                             <constraint firstItem="6Z8-hq-8IT" firstAttribute="leading" secondItem="pi7-a9-G5K" secondAttribute="leading" constant="20" id="cEw-xp-WQj"/>
@@ -1140,6 +1151,7 @@
                         <color key="badgeColor" red="0.60228371619999999" green="0.88342934849999999" blue="0.87667727470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="lbCodigoInvitacion" destination="GSV-Ca-tls" id="wWV-WQ-Vcm"/>
                         <outlet property="lbFecha" destination="hnh-g0-rV6" id="rat-xR-XN7"/>
                         <outlet property="lbLugar" destination="Njc-sf-4FC" id="7L2-WT-ecg"/>
                         <outlet property="lbMiembros" destination="kYQ-zK-li5" id="vek-U4-8zr"/>
@@ -1772,6 +1784,7 @@
         <image name="timer" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="MbC-9T-f53"/>
         <segue reference="6GR-yv-kuO"/>
     </inferredMetricsTieBreakers>
 </document>
