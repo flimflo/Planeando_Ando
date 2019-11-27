@@ -148,7 +148,7 @@ class EventTableViewController: UITableViewController {
                         var index = 0
                         for i in 0..<self.eventArray.count {
                             
-                            if self.eventArray[i].joinId == self.modifyIndex{
+                            if self.eventArray[i].joinId == evento.joinId {
                                 index = i
                             }
                         }
