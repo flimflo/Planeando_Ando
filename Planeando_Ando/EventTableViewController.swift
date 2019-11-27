@@ -199,6 +199,15 @@ class EventTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            db.collection("events").whereField("joinId", isEqualTo: eventArray[indexPath.row].joinId)
+                .getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        let document = querySnapshot!.documents.first
+                        document?.reference.delete()
+                    }
+            }
             eventArray.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
