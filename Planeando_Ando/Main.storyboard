@@ -580,7 +580,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" rowHeight="60" id="3cb-bN-MMw">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" reuseIdentifier="idCell" rowHeight="60" id="3cb-bN-MMw">
                                 <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3cb-bN-MMw" id="urH-FF-vSd">
@@ -1160,6 +1160,7 @@
                         <color key="badgeColor" red="0.60228371619999999" green="0.88342934849999999" blue="0.87667727470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="btOutlet" destination="o2L-g3-xlg" id="uuh-k8-KHY"/>
                         <outlet property="lbCodigoInvitacion" destination="GSV-Ca-tls" id="wWV-WQ-Vcm"/>
                         <outlet property="lbFecha" destination="hnh-g0-rV6" id="rat-xR-XN7"/>
                         <outlet property="lbLugar" destination="Njc-sf-4FC" id="7L2-WT-ecg"/>
@@ -1815,7 +1816,6 @@
         <image name="timer" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2vz-aY-jXG"/>
         <segue reference="81b-zZ-Cbo"/>
     </inferredMetricsTieBreakers>
 </document>
