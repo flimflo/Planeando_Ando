@@ -18,6 +18,8 @@ class EventTableViewController: UITableViewController {
     
     var eventArray = [Event]()
     
+    var modifyIndex:String = ""
+    
     var tap : UITapGestureRecognizer!
     
     @IBOutlet var popOver: UIView!
@@ -35,7 +37,7 @@ class EventTableViewController: UITableViewController {
         db = Firestore.firestore()
         //loadData()
         checkForUpdates()
-        
+        checkForAdd()
     }
     
     @IBAction func addPressed(_ sender: UIBarButtonItem) {
@@ -90,7 +92,7 @@ class EventTableViewController: UITableViewController {
     }
     
     
-    func checkForUpdates() {
+    func checkForAdd() {
         db.collection("events").order(by: "startTime", descending: true).whereField("members", arrayContains: user).addSnapshotListener {
                 querySnapshot, error in
                 
@@ -113,6 +115,45 @@ class EventTableViewController: UITableViewController {
                         let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members)
                         
                         self.eventArray.append(evento)
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+        }
+    }
+    
+    func checkForUpdates() {
+        db.collection("events").order(by: "startTime", descending: true).whereField("members", arrayContains: user).addSnapshotListener {
+                querySnapshot, error in
+                
+                guard let snapshot = querySnapshot else {return}
+                
+                snapshot.documentChanges.forEach {
+                    diff in
+                    
+                    if diff.type == .modified {
+                        
+                        let datos = diff.document.data()
+                        let title = datos["title"] as? String ?? ""
+                        let description = datos["description"] as? String ?? ""
+                        let place = datos["place"] as? String ?? ""
+                        let status = datos["status"] as? String ?? ""
+                        let joinId = datos["joinId"] as? String ?? ""
+                        let startTime = datos["startTime"] as? Date ?? Date()
+                        let members = datos["members"] as? Array<String> ?? [String]()
+                        
+                        let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members)
+                        
+                        var index = 0
+                        for i in 0..<self.eventArray.count {
+                            
+                            if self.eventArray[i].joinId == self.modifyIndex{
+                                index = i
+                            }
+                        }
+                        self.eventArray.remove(at: index)
+                        self.eventArray.insert(evento, at: index)
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
