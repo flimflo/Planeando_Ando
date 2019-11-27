@@ -52,20 +52,20 @@ class EditarEventoViewController: UIViewController {
             
             let startTime  = obtenerFecha()
             
-            
-            let newEvent = Event(title: title, description: description, startTime: startTime, place: place, status: "Activo", joinId: "ABC", members: [user!])
-                   
-                   var ref:DocumentReference? = nil
-                   ref = db.collection("events").addDocument(data: newEvent.dictionary) {
-                       error in
-                       
-                       if let error = error {
-                           print("Error adding document: \(error.localizedDescription)")
-                       }else{
-                           print("Document added with ID: \(ref!.documentID)")
-                       }
-                       
-                   }
+            db.collection("events").whereField("joinId", isEqualTo: Evento.joinId)
+                .getDocuments() { (querySnapshot, err) in
+                    if let err = err {
+                        print("Error getting documents: \(err)")
+                    } else {
+                        let document = querySnapshot!.documents.first
+                        document?.reference.setData([
+                            "title":self.tfNombre.text,
+                            "place":self.tfLugar.text,
+                            "description":self.tfDescripcion.text,
+                            "startTime":startTime
+                        ], merge: true)
+                    }
+            }
         }
     }
     
@@ -111,5 +111,14 @@ class EditarEventoViewController: UIViewController {
     
     @IBAction func tapDismiss(_ sender: UITapGestureRecognizer) {
         self.view.endEditing(true)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    if(segue.identifier == "goToTV"){
+        
+        let tvcVc = segue.destination as! EventTableViewController
+        
+        tvcVc.modifyIndex = Evento.joinId
+        }
     }
 }
