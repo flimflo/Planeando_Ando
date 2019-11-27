@@ -595,48 +595,99 @@
                         <viewControllerLayoutGuide type="bottom" id="YYL-5Y-gXF"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sr0-e3-lM1">
-                        <rect key="frame" x="0.0" y="0.0" width="310" height="350"/>
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="450"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reunión" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQz-kN-DGg">
-                                <rect key="frame" x="129" y="20" width="62" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nueva Reunión" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQz-kN-DGg">
+                                <rect key="frame" x="75" y="15" width="150" height="28"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="J5i-O3-XKA">
-                                <rect key="frame" x="28" y="87" width="254" height="84"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="J5i-O3-XKA">
+                                <rect key="frame" x="21" y="158" width="258" height="100"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="oIg-Yo-xVv"/>
+                                </constraints>
+                                <date key="minimumDate" timeIntervalSinceReferenceDate="-978267600">
+                                    <!--1970-01-01 11:00:00 +0000-->
+                                </date>
+                                <date key="maximumDate" timeIntervalSinceReferenceDate="1167562800">
+                                    <!--2037-12-31 11:00:00 +0000-->
+                                </date>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fecha y Hora" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgf-S8-Lqm">
-                                <rect key="frame" x="28" y="58" width="102" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Inicio de la Reunión" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fgf-S8-Lqm">
+                                <rect key="frame" x="26" y="130" width="161" height="23"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Duración" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fkj-Ec-duc">
-                                <rect key="frame" x="28" y="190" width="69" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Dqf-ub-6fc">
+                                <rect key="frame" x="21" y="291" width="258" height="100"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="eM5-ZV-a5q"/>
+                                </constraints>
+                            </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fin de la Reunión" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Jz-fF-To0">
+                                <rect key="frame" x="26" y="263" width="141" height="23"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1r-YB-nkD">
-                                <rect key="frame" x="123" y="300" width="58" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Agendar"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qmF-I0-OSN">
+                                <rect key="frame" x="26" y="91" width="248" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nombre" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVm-1s-PGv">
+                                <rect key="frame" x="26" y="60" width="63" height="21"/>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1r-YB-nkD">
+                                <rect key="frame" x="100" y="400" width="100" height="40"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="KeP-El-h8H"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="24"/>
+                                <state key="normal" title="Agendar">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.594066321849823" green="0.88344871997833252" blue="0.87673467397689819" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Fgf-S8-Lqm" firstAttribute="leading" secondItem="sr0-e3-lM1" secondAttribute="leadingMargin" constant="10" id="2cz-6R-Bcw"/>
+                            <constraint firstItem="e1r-YB-nkD" firstAttribute="centerX" secondItem="sr0-e3-lM1" secondAttribute="centerX" id="3di-0h-cFl"/>
+                            <constraint firstItem="6Jz-fF-To0" firstAttribute="top" secondItem="J5i-O3-XKA" secondAttribute="bottom" constant="5" id="9aG-UG-adv"/>
+                            <constraint firstItem="YYL-5Y-gXF" firstAttribute="top" secondItem="e1r-YB-nkD" secondAttribute="bottom" constant="10" id="CgG-bE-HuM"/>
+                            <constraint firstItem="Fgf-S8-Lqm" firstAttribute="top" secondItem="qmF-I0-OSN" secondAttribute="bottom" constant="5" id="GE0-yg-CXi"/>
+                            <constraint firstItem="jVm-1s-PGv" firstAttribute="leading" secondItem="sr0-e3-lM1" secondAttribute="leadingMargin" constant="10" id="M0x-9P-Pwj"/>
+                            <constraint firstItem="BQz-kN-DGg" firstAttribute="top" secondItem="q0F-D9-AeD" secondAttribute="bottom" constant="15" id="OVc-E4-Px1"/>
+                            <constraint firstItem="J5i-O3-XKA" firstAttribute="top" secondItem="Fgf-S8-Lqm" secondAttribute="bottom" constant="5" id="TBh-0d-Wme"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qmF-I0-OSN" secondAttribute="trailing" constant="10" id="Xgb-h5-LhH"/>
+                            <constraint firstItem="jVm-1s-PGv" firstAttribute="top" secondItem="q0F-D9-AeD" secondAttribute="bottom" constant="60" id="YkN-Ie-rGu"/>
+                            <constraint firstItem="Dqf-ub-6fc" firstAttribute="leading" secondItem="sr0-e3-lM1" secondAttribute="leadingMargin" constant="5" id="fht-aw-cPE"/>
+                            <constraint firstItem="BQz-kN-DGg" firstAttribute="centerX" secondItem="sr0-e3-lM1" secondAttribute="centerX" id="gP8-wg-ars"/>
+                            <constraint firstItem="6Jz-fF-To0" firstAttribute="leading" secondItem="sr0-e3-lM1" secondAttribute="leadingMargin" constant="10" id="hRo-AG-YLr"/>
+                            <constraint firstItem="J5i-O3-XKA" firstAttribute="leading" secondItem="sr0-e3-lM1" secondAttribute="leadingMargin" constant="5" id="kpF-mI-WTn"/>
+                            <constraint firstItem="Dqf-ub-6fc" firstAttribute="top" secondItem="6Jz-fF-To0" secondAttribute="bottom" constant="5" id="mlI-iB-OYZ"/>
+                            <constraint firstItem="qmF-I0-OSN" firstAttribute="top" secondItem="jVm-1s-PGv" secondAttribute="bottom" constant="10" id="pgA-0S-Miy"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="J5i-O3-XKA" secondAttribute="trailing" constant="5" id="u8J-NC-9nT"/>
+                            <constraint firstItem="qmF-I0-OSN" firstAttribute="leading" secondItem="sr0-e3-lM1" secondAttribute="leadingMargin" constant="10" id="uzi-lB-Abs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dqf-ub-6fc" secondAttribute="trailing" constant="5" id="ydy-U0-hDV"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="6Cm-7z-nZU"/>
-                    <size key="freeformSize" width="310" height="350"/>
+                    <size key="freeformSize" width="300" height="450"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZyQ-Hl-yDJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7531" y="320"/>
+            <point key="canvasLocation" x="7529.6000000000004" y="318.44077961019491"/>
         </scene>
         <!--Contactos-->
         <scene sceneID="kW3-B9-dDd">
