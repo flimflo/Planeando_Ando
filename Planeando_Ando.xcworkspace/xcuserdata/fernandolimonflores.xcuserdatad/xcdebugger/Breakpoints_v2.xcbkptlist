@@ -14,8 +14,8 @@
             filePath = "Planeando_Ando/EventTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "71"
-            endingLineNumber = "71"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "loadData()"
             landmarkType = "7">
             <Locations>
@@ -62,8 +62,8 @@
             filePath = "Planeando_Ando/EventTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
             landmarkName = "loadData()"
             landmarkType = "7">
          </BreakpointContent>
@@ -87,54 +87,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "08010D6C-182D-48B7-BCB5-8A12DA446210"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Planeando_Ando/EventTableViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
-            landmarkName = "checkForUpdates()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "08010D6C-182D-48B7-BCB5-8A12DA446210 - da687e97ff9facf2"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Planeando_Ando.EventTableViewController.checkForUpdates() -&gt; ()"
-                  moduleName = "Planeando_Ando"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fernandolimonflores/Desktop/Planeando_Ando/Planeando_Ando/EventTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "127"
-                  endingLineNumber = "127"
-                  offsetFromSymbolStart = "55">
-               </Location>
-               <Location
-                  uuid = "08010D6C-182D-48B7-BCB5-8A12DA446210 - 7382c83c9f659898"
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRQuerySnapshot&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Planeando_Ando.EventTableViewController.checkForUpdates() -&gt; ()"
-                  moduleName = "Planeando_Ando"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/fernandolimonflores/Desktop/Planeando_Ando/Planeando_Ando/EventTableViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "64">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "4425ADF3-0958-4756-8DCB-697593656C4C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -142,8 +94,8 @@
             filePath = "Planeando_Ando/EventTableViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "150"
+            endingLineNumber = "150"
             landmarkName = "checkForUpdates()"
             landmarkType = "7">
          </BreakpointContent>

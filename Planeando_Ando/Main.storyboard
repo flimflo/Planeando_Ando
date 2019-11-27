@@ -1160,6 +1160,7 @@
                         <color key="badgeColor" red="0.60228371619999999" green="0.88342934849999999" blue="0.87667727470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="btOutlet" destination="o2L-g3-xlg" id="40d-uq-kt7"/>
                         <outlet property="lbCodigoInvitacion" destination="GSV-Ca-tls" id="wWV-WQ-Vcm"/>
                         <outlet property="lbFecha" destination="hnh-g0-rV6" id="rat-xR-XN7"/>
                         <outlet property="lbLugar" destination="Njc-sf-4FC" id="7L2-WT-ecg"/>
@@ -1483,6 +1484,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="k1X-t0-LF4" firstAttribute="centerX" secondItem="ydz-7X-urN" secondAttribute="centerX" id="07h-9Q-zae"/>
                                     <constraint firstItem="M6P-9E-clL" firstAttribute="leading" secondItem="ydz-7X-urN" secondAttribute="leading" constant="60" id="5tY-z6-L51"/>
@@ -1498,6 +1500,9 @@
                                     <constraint firstItem="M6P-9E-clL" firstAttribute="top" secondItem="k1X-t0-LF4" secondAttribute="bottom" constant="90" id="ryR-f0-gH6"/>
                                     <constraint firstItem="n94-VP-729" firstAttribute="leading" secondItem="ydz-7X-urN" secondAttribute="leading" constant="60" id="yAw-xq-wM5"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="WyG-hR-iEp" appends="YES" id="trS-NT-3cv"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1518,6 +1523,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R3Q-JB-Bjo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="WyG-hR-iEp">
+                    <connections>
+                        <action selector="tapDismiss:" destination="lts-2j-7sE" id="Rde-lC-fWv"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4504.8000000000002" y="-1155.472263868066"/>
         </scene>
@@ -1815,7 +1825,7 @@
         <image name="timer" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="2vz-aY-jXG"/>
+        <segue reference="UBF-e6-cRk"/>
         <segue reference="81b-zZ-Cbo"/>
     </inferredMetricsTieBreakers>
 </document>
