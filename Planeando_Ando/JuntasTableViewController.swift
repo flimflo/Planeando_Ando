@@ -42,7 +42,7 @@ class JuntasTableViewController: UITableViewController {
     @IBAction func AgregarJunta(_ sender: UIBarButtonItem) {
         self.view.addSubview(popOver)
         view.addGestureRecognizer(tap)
-        popOver.frame = CGRect(x: screenWidth / 2 - 150, y: screenHeight / 2 - 225, width: 300, height: 450)
+        popOver.frame = CGRect(x: screenWidth / 2 - 150, y: 0, width: 300, height: 450)
     }
     
     @IBAction func dismissPopOver() {
