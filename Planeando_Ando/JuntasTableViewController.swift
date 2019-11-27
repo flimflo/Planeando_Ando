@@ -14,9 +14,11 @@ class JuntasTableViewController: UITableViewController {
 
     var tap : UITapGestureRecognizer!
     
+    let screenWidth = UIScreen.main.bounds.width
+    let screenHeight = UIScreen.main.bounds.height
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tap = UITapGestureRecognizer(target: self, action: #selector(dismissPopOver))
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -36,11 +38,11 @@ class JuntasTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
-
+    
     @IBAction func AgregarJunta(_ sender: UIBarButtonItem) {
         self.view.addSubview(popOver)
         view.addGestureRecognizer(tap)
-        popOver.frame = CGRect(x: self.view.frame.width - 190, y: 0, width: 400, height: 127)
+        popOver.frame = CGRect(x: screenWidth / 2 - 150, y: screenHeight / 2 - 225, width: 300, height: 450)
     }
     
     @IBAction func dismissPopOver() {

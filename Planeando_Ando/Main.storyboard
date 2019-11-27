@@ -497,12 +497,12 @@
             </objects>
             <point key="canvasLocation" x="2892" y="-30.134932533733135"/>
         </scene>
-        <!--Colaborador-->
+        <!--Evento-->
         <scene sceneID="wPI-qa-VRb">
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="uoi-RM-jWC" customClass="Class_TabBar" customModule="Planeando_Ando" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Colaborador" id="Asc-lk-XMf"/>
+                    <navigationItem key="navigationItem" title="Evento" id="Asc-lk-XMf"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="6lY-zk-qed">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -512,7 +512,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="6DQ-ht-Rtt" kind="relationship" relationship="viewControllers" id="Udv-ch-XOd"/>
-                        <segue destination="qFW-eT-dcY" kind="relationship" relationship="viewControllers" id="Og9-zQ-OmE"/>
+                        <segue destination="5rP-ZH-cRI" kind="relationship" relationship="viewControllers" id="Og9-zQ-OmE"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VxQ-T1-REI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -567,7 +567,7 @@
             </objects>
             <point key="canvasLocation" x="5817" y="789"/>
         </scene>
-        <!--Add-->
+        <!--Juntas-->
         <scene sceneID="Vfy-7r-2MF">
             <objects>
                 <tableViewController id="qFW-eT-dcY" customClass="JuntasTableViewController" customModule="Planeando_Ando" customModuleProvider="target" sceneMemberID="viewController">
@@ -576,15 +576,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <imageView key="tableFooterView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoBackground" id="OjO-Vf-Lm5">
-                            <rect key="frame" x="0.0" y="99.5" width="375" height="639"/>
+                            <rect key="frame" x="0.0" y="116" width="375" height="639"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" id="3cb-bN-MMw">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="detailDisclosureButton" indentationWidth="10" rowHeight="60" id="3cb-bN-MMw">
+                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3cb-bN-MMw" id="urH-FF-vSd">
-                                    <rect key="frame" x="0.0" y="0.0" width="316" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="316" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -594,14 +594,16 @@
                             <outlet property="delegate" destination="qFW-eT-dcY" id="t5F-Kz-LUE"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Juntas" image="calendar.circle" catalog="system" id="avc-GF-za0"/>
-                    <navigationItem key="navigationItem" title="Add" id="AlV-bh-WwM">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="0Jb-Jf-adK">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Juntas" id="AlV-bh-WwM">
+                        <barButtonItem key="rightBarButtonItem" title="Add" image="plus" catalog="system" id="lQY-VK-bTu">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <action selector="AgregarJunta:" destination="qFW-eT-dcY" id="sKx-TR-6Bk"/>
+                                <action selector="AgregarJunta:" destination="qFW-eT-dcY" id="FiO-fx-4ym"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="popOver" destination="bqe-Zu-B9F" id="5Bj-eE-8oS"/>
                     </connections>
@@ -697,7 +699,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="7460" y="9"/>
+            <point key="canvasLocation" x="9015.2000000000007" y="8.5457271364317844"/>
         </scene>
         <!--Contactos-->
         <scene sceneID="kW3-B9-dDd">
@@ -871,7 +873,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="eVd-O0-ESq">
-                                <rect key="frame" x="0.0" y="44" width="1024" height="623"/>
+                                <rect key="frame" x="0.0" y="44" width="2048" height="623"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XI5-V6-UEe">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
@@ -1758,6 +1760,25 @@
             </objects>
             <point key="canvasLocation" x="6644" y="-421"/>
         </scene>
+        <!--Juntas-->
+        <scene sceneID="Mch-Iy-MP7">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5rP-ZH-cRI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Juntas" image="calendar.circle" catalog="system" id="p15-Et-HhH"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1H7-a5-TVn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qFW-eT-dcY" kind="relationship" relationship="rootViewController" id="Hs7-Lz-Ltc"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZxU-Yx-LOS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8076" y="8.5457271364317844"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Planendo_Ando" width="3256" height="1096"/>
@@ -1779,6 +1800,7 @@
         <image name="person.3.fill" catalog="system" width="71" height="34"/>
         <image name="person.circle.fill" catalog="system" width="64" height="60"/>
         <image name="person.crop.circle" catalog="system" width="64" height="60"/>
+        <image name="plus" catalog="system" width="64" height="56"/>
         <image name="power" catalog="system" width="64" height="62"/>
         <image name="tengesign.square.fill" catalog="system" width="64" height="56"/>
         <image name="timer" catalog="system" width="64" height="60"/>
