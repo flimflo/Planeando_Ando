@@ -38,6 +38,7 @@ class EventTableViewController: UITableViewController {
         //loadData()
         checkForUpdates()
         checkForAdd()
+        checkForDelete()
     }
     
     @IBAction func addPressed(_ sender: UIBarButtonItem) {
@@ -162,6 +163,44 @@ class EventTableViewController: UITableViewController {
         }
     }
     
+    func checkForDelete() {
+        db.collection("events").order(by: "startTime", descending: true).whereField("members", arrayContains: user).addSnapshotListener {
+                querySnapshot, error in
+                
+                guard let snapshot = querySnapshot else {return}
+                
+                snapshot.documentChanges.forEach {
+                    diff in
+                    
+                    if diff.type == .removed {
+                        print("Removed user: \(diff.document.data())")
+                        let datos = diff.document.data()
+                        let title = datos["title"] as? String ?? ""
+                        let description = datos["description"] as? String ?? ""
+                        let place = datos["place"] as? String ?? ""
+                        let status = datos["status"] as? String ?? ""
+                        let joinId = datos["joinId"] as? String ?? ""
+                        let startTime = datos["startTime"] as? Date ?? Date()
+                        let members = datos["members"] as? Array<String> ?? [String]()
+                        
+                        let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members)
+                        
+                        var index = 0
+                        for i in 0..<self.eventArray.count {
+                            
+                            if self.eventArray[i].joinId == evento.joinId {
+                                index = i
+                            }
+                        }
+                        self.eventArray.remove(at: index)
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+        }
+    }
+    
     
 
     // MARK: - Table view data source
@@ -199,17 +238,36 @@ class EventTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            db.collection("events").whereField("joinId", isEqualTo: eventArray[indexPath.row].joinId)
-                .getDocuments() { (querySnapshot, err) in
-                    if let err = err {
-                        print("Error getting documents: \(err)")
-                    } else {
-                        let document = querySnapshot!.documents.first
-                        document?.reference.delete()
-                    }
+            
+            if eventArray[indexPath.row].members[0] == user {
+                
+                db.collection("events").whereField("joinId", isEqualTo: eventArray[indexPath.row].joinId)
+                    .getDocuments() { (querySnapshot, err) in
+                        if let err = err {
+                            print("Error getting documents: \(err)")
+                        } else {
+                            let document = querySnapshot!.documents.first
+                            document?.reference.delete()
+                        }
+                }
+            }else{
+                
+                db.collection("events").whereField("joinId", isEqualTo: eventArray[indexPath.row].joinId)
+                    .getDocuments() { (querySnapshot, err) in
+                        if let err = err {
+                            print("Error getting documents: \(err)")
+                        } else {
+                            let document = querySnapshot!.documents.first
+                            document?.reference.updateData([
+                                "members": FieldValue.arrayRemove([self.user])
+                            ])
+                        }
+                }
             }
-            eventArray.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            
+            //eventArray.remove(at: indexPath.row)
+            //tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 
