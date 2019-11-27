@@ -425,6 +425,7 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P43-MA-wtv" id="Lxj-ep-ht1">
                                     <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.60228371619999999" green="0.88342934849999999" blue="0.87667727470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -564,7 +565,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6NJ-V5-Bjl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5817" y="789"/>
+            <point key="canvasLocation" x="8210" y="-1155"/>
         </scene>
         <!--Juntas-->
         <scene sceneID="Vfy-7r-2MF">
@@ -727,7 +728,7 @@
                     </constraints>
                 </view>
             </objects>
-            <point key="canvasLocation" x="9015.2000000000007" y="8.5457271364317844"/>
+            <point key="canvasLocation" x="6495" y="1412"/>
         </scene>
         <!--Contactos-->
         <scene sceneID="kW3-B9-dDd">
@@ -897,14 +898,14 @@
             <objects>
                 <viewController id="6DQ-ht-Rtt" customClass="Informacion_ViewController" customModule="Planeando_Ando" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gyo-2U-VTr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="eVd-O0-ESq">
-                                <rect key="frame" x="0.0" y="0.0" width="1024" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="1024" height="647"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XI5-V6-UEe">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="598"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pi7-a9-G5K">
                                         <rect key="frame" x="15" y="0.0" width="345" height="895"/>
@@ -1200,7 +1201,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="5816.8000000000002" y="-445.72713643178412"/>
+            <point key="canvasLocation" x="5993" y="9"/>
         </scene>
         <!--Info-->
         <scene sceneID="7tb-ce-CRa">
@@ -1790,7 +1791,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="6644" y="-421"/>
+            <point key="canvasLocation" x="7018" y="10"/>
         </scene>
         <!--Juntas-->
         <scene sceneID="Mch-Iy-MP7">
@@ -1809,7 +1810,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZxU-Yx-LOS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8076" y="8.5457271364317844"/>
+            <point key="canvasLocation" x="5625" y="1412"/>
         </scene>
     </scenes>
     <resources>
@@ -1839,7 +1840,6 @@
         <image name="timer" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Udv-ch-XOd"/>
         <segue reference="81b-zZ-Cbo"/>
     </inferredMetricsTieBreakers>
 </document>
