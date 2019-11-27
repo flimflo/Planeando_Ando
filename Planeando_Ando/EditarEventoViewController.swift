@@ -16,6 +16,8 @@ class EditarEventoViewController: UIViewController {
     
     var user = Auth.auth().currentUser?.email
     
+    var Evento = Event()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -26,6 +28,11 @@ class EditarEventoViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        tfNombre.text = Evento.title
+        tfLugar.text = Evento.place
+        tfDescripcion.text = Evento.description
+        
+        
     }
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -39,7 +46,7 @@ class EditarEventoViewController: UIViewController {
     
     
     
-    @IBAction func crearEvento(_ sender: Any) {
+    @IBAction func editarEvento(_ sender: Any) {
         
         if let title = tfNombre.text, let place = tfLugar.text, let description = tfDescripcion.text{
             

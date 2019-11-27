@@ -15,7 +15,6 @@
 		610B957E2356BC240024D21A /* Class_TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 610B957D2356BC230024D21A /* Class_TabBar.swift */; };
 		6123C8522378BA1D000CDC7D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6123C8512378BA1D000CDC7D /* GoogleService-Info.plist */; };
 		6123C8542378DF35000CDC7D /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6123C8532378DF35000CDC7D /* EventTableViewController.swift */; };
-		6123C8562378EABC000CDC7D /* NewEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6123C8552378EABC000CDC7D /* NewEventViewController.swift */; };
 		612955EC23873FC3004B7F80 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612955EB23873FC3004B7F80 /* Event.swift */; };
 		61418F94238D87580088D520 /* UnirseEventoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61418F93238D87580088D520 /* UnirseEventoViewController.swift */; };
 		614621822350DD070028F7C7 /* Informacion_ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 614621812350DD070028F7C7 /* Informacion_ViewController.swift */; };
@@ -30,6 +29,7 @@
 		61DDDEDC23753343008AF10F /* Chat.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61DDDEDB23753343008AF10F /* Chat.storyboard */; };
 		61DDDEDE2375338D008AF10F /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61DDDEDD2375338D008AF10F /* ChatViewController.swift */; };
 		61E39C6A2DB98D380285BD57 /* Pods_Planeando_Ando.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F4B6D971AB6EBE256BFBCEE /* Pods_Planeando_Ando.framework */; };
+		61E5D17D238DFCDD001948CB /* newEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E5D17C238DFCDD001948CB /* newEventViewController.swift */; };
 		6321A9C31B94EBA10053D2E7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6321A9C21B94EBA10053D2E7 /* Images.xcassets */; };
 		6321A9E21B94EBE70053D2E7 /* CustomMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6321A9DB1B94EBE70053D2E7 /* CustomMessageCell.swift */; };
 		6321A9E51B94EBE70053D2E7 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6321A9DE1B94EBE70053D2E7 /* MessageCell.xib */; };
@@ -51,7 +51,6 @@
 		610B957D2356BC230024D21A /* Class_TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Class_TabBar.swift; sourceTree = "<group>"; };
 		6123C8512378BA1D000CDC7D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6123C8532378DF35000CDC7D /* EventTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
-		6123C8552378EABC000CDC7D /* NewEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventViewController.swift; sourceTree = "<group>"; };
 		612955EB23873FC3004B7F80 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		61418F93238D87580088D520 /* UnirseEventoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnirseEventoViewController.swift; sourceTree = "<group>"; };
 		614621812350DD070028F7C7 /* Informacion_ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Informacion_ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +64,7 @@
 		61DDDED923753332008AF10F /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 		61DDDEDB23753343008AF10F /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		61DDDEDD2375338D008AF10F /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
+		61E5D17C238DFCDD001948CB /* newEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newEventViewController.swift; sourceTree = "<group>"; };
 		6321A9B61B94EBA10053D2E7 /* Planeando_Ando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planeando_Ando.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6321A9BA1B94EBA10053D2E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6321A9C21B94EBA10053D2E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
@@ -166,8 +166,8 @@
 				6179527F23505A4600F3BD62 /* ToDo_ViewController.swift */,
 				6106D5FA23500DD70094C6F7 /* QR_ViewController.swift */,
 				6106D5FC23500F810094C6F7 /* Contacto_ViewController.swift */,
-				6123C8552378EABC000CDC7D /* NewEventViewController.swift */,
 				61418F93238D87580088D520 /* UnirseEventoViewController.swift */,
+				61E5D17C238DFCDD001948CB /* newEventViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -360,8 +360,8 @@
 			files = (
 				63E28B331B9A337600FBF6E0 /* WelcomeViewController.swift in Sources */,
 				6106D5FD23500F810094C6F7 /* Contacto_ViewController.swift in Sources */,
+				61E5D17D238DFCDD001948CB /* newEventViewController.swift in Sources */,
 				4A4A89A4238A5AE6006E9776 /* EditarEventoViewController.swift in Sources */,
-				6123C8562378EABC000CDC7D /* NewEventViewController.swift in Sources */,
 				6179528023505A4600F3BD62 /* ToDo_ViewController.swift in Sources */,
 				6123C8542378DF35000CDC7D /* EventTableViewController.swift in Sources */,
 				61DDDEDA23753333008AF10F /* Message.swift in Sources */,

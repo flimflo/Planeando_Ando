@@ -498,11 +498,7 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="6DQ-ht-Rtt" kind="relationship" relationship="viewControllers" id="E07-et-2U7"/>
-                        <segue destination="qFW-eT-dcY" kind="relationship" relationship="viewControllers" id="ANX-8e-nXZ"/>
-                        <segue destination="hJb-ix-rgZ" kind="relationship" relationship="viewControllers" id="RAa-Hb-YDm"/>
-                        <segue destination="ahR-Tn-BwV" kind="relationship" relationship="viewControllers" id="xwo-Dq-oaD"/>
-                        <segue destination="H3w-sD-eqd" kind="relationship" relationship="viewControllers" id="ZWC-wi-XXe"/>
+                        <segue destination="6DQ-ht-Rtt" kind="relationship" relationship="viewControllers" id="Udv-ch-XOd"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VxQ-T1-REI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -518,7 +514,7 @@
                         <viewControllerLayoutGuide type="bottom" id="MhX-DF-MfY"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="L6h-zA-lh7">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fecha:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zxa-Ri-RIS">
@@ -562,7 +558,7 @@
             <objects>
                 <tableViewController id="qFW-eT-dcY" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="nBy-ZG-Uh3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
@@ -949,7 +945,7 @@
                                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" image="pencil.circle.fill" catalog="system"/>
                                                 <connections>
-                                                    <segue destination="p6U-Za-HNE" kind="push" id="UBF-e6-cRk"/>
+                                                    <segue destination="p6U-Za-HNE" kind="push" identifier="goToEdit" id="UBF-e6-cRk"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -1046,18 +1042,28 @@
                         <color key="badgeColor" red="0.60228371619999999" green="0.88342934849999999" blue="0.87667727470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <connections>
-                        <outlet property="scrollView" destination="XI5-V6-UEe" id="CZm-wy-Vx7"/>
-                        <outlet property="vwVista" destination="pi7-a9-G5K" id="QSC-ri-btI"/>
+                        <outlet property="lbFecha" destination="hnh-g0-rV6" id="rat-xR-XN7"/>
+                        <outlet property="lbLugar" destination="Njc-sf-4FC" id="7L2-WT-ecg"/>
+                        <outlet property="lbMiembros" destination="kYQ-zK-li5" id="vek-U4-8zr"/>
+                        <outlet property="lbNombre" destination="Hac-cE-lDU" id="GXR-EM-F8Q"/>
+                        <outlet property="scrollView" destination="XI5-V6-UEe" id="pKb-wh-cKz"/>
+                        <outlet property="tvDescripcion" destination="w0q-6Z-2d0" id="4Lh-Te-Crq"/>
+                        <outlet property="vwVista" destination="pi7-a9-G5K" id="cQa-MW-SWt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b8f-08-97G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="T9B-Ip-fYW">
+                    <connections>
+                        <action selector="tapDismiss:" destination="6DQ-ht-Rtt" id="rnf-01-qiB"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="5816.8000000000002" y="-421.43928035982015"/>
+            <point key="canvasLocation" x="5817" y="-445"/>
         </scene>
         <!--Info-->
         <scene sceneID="7tb-ce-CRa">
             <objects>
-                <viewController id="HOd-fA-zXp" customClass="Informacion_ViewController" customModule="Planeando_Ando" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="HOd-fA-zXp" customClass="newEventViewController" customModule="Planeando_Ando" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hrJ-uE-qcC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1515,7 +1521,7 @@
                                                     <color key="titleColor" red="0.17631575469999999" green="0.18027237060000001" blue="0.18856686349999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <connections>
-                                                    <action selector="crearEvento:" destination="p6U-Za-HNE" eventType="touchUpInside" id="aSW-5i-O6m"/>
+                                                    <action selector="editarEvento:" destination="p6U-Za-HNE" eventType="touchUpInside" id="791-uS-2TN"/>
                                                 </connections>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="23B-rX-gna">
@@ -1666,7 +1672,6 @@
         <image name="timer" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="slQ-Sc-VNu"/>
-        <segue reference="ZWC-wi-XXe"/>
+        <segue reference="6GR-yv-kuO"/>
     </inferredMetricsTieBreakers>
 </document>

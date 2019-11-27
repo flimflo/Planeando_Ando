@@ -90,6 +90,7 @@ class EventTableViewController: UITableViewController {
                     diff in
                     
                     if diff.type == .added {
+                        
                         let datos = diff.document.data()
                         let title = datos["title"] as? String ?? ""
                         let description = datos["description"] as? String ?? ""
@@ -190,13 +191,14 @@ class EventTableViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if(segue.identifier == "goToTab"){
-               
-            let vistaNueva = segue.destination as! Class_TabBar
+            
+            let tabVc = segue.destination as! Class_TabBar
+            
+            let infVc = tabVc.viewControllers?.first as! Informacion_ViewController
                
             let indexPath = tableView.indexPathForSelectedRow!
-            print(indexPath)
-            vistaNueva.jug = eventArray[indexPath.row].title
-            vistaNueva.prueba = eventArray[indexPath.row]
+            
+            infVc.Evento = eventArray[indexPath.row]
         }
         else{
                /*let vistaAgrega = segue.destination as! ViewControllerAgregar
