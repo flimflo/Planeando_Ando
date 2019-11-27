@@ -1150,6 +1150,7 @@
                         <color key="badgeColor" red="0.60228371619999999" green="0.88342934849999999" blue="0.87667727470000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
                     <connections>
+                        <outlet property="btOutlet" destination="o2L-g3-xlg" id="EFL-2O-mOk"/>
                         <outlet property="lbCodigoInvitacion" destination="GSV-Ca-tls" id="wWV-WQ-Vcm"/>
                         <outlet property="lbFecha" destination="hnh-g0-rV6" id="rat-xR-XN7"/>
                         <outlet property="lbLugar" destination="Njc-sf-4FC" id="7L2-WT-ecg"/>
@@ -1785,6 +1786,7 @@
         <image name="timer" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="UBF-e6-cRk"/>
         <segue reference="LdB-HW-8xT"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import Firebase
 
 class Informacion_ViewController: UIViewController {
     
+    var user = Auth.auth().currentUser?.email
     
     var Evento = Event()
     
@@ -22,6 +24,11 @@ class Informacion_ViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        
+        if Evento.members[0] != user {
+            btOutlet.isHidden = true
+        }
+        
         
         lbNombre.text = Evento.title
         lbLugar.text = Evento.place
@@ -45,6 +52,7 @@ class Informacion_ViewController: UIViewController {
     @IBOutlet weak var lbFecha: UILabel!
     @IBOutlet weak var lbMiembros: UILabel!
     @IBOutlet weak var lbCodigoInvitacion: UILabel!
+    @IBOutlet weak var btOutlet: UIButton!
     
     
     @objc func keyboardWillShow(notification: NSNotification) {
