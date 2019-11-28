@@ -330,6 +330,10 @@ class EventTableViewController: UITableViewController {
             
             juntaVc.Evento = eventArray[indexPath.row]
             
+            let chatView = tabVc.viewControllers?[2] as! ChatViewController
+            
+            chatView.Evento = eventArray[indexPath.row]
+            
             //let nav = Nuevapantalla.viewControllers![1] as! UINavigationController
             //let destinationViewController = nav.topviewcontroller as ProfileController
             

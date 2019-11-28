@@ -14,6 +14,8 @@ import ChameleonFramework
 class ChatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     
+    var Evento = Event()
+    
     // Declare instance variables here
     var messageArray : [Message] = [Message]()
     
@@ -51,6 +53,8 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         retrieveMessages()
         
         messageTableView.separatorStyle = .none
+        
+        print(Evento)
     }
 
     ///////////////////////////////////////////
@@ -143,7 +147,7 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let messageDB = Database.database().reference().child("Messages")
         
-        let messageDictionary = ["Sender" : Auth.auth().currentUser?.email, "MessageBody" : messageTextfield.text!]
+        let messageDictionary = ["Sender" : Auth.auth().currentUser?.email, "MessageBody" : messageTextfield.text!,"Event" : Evento.joinId]
         
         messageDB.childByAutoId().setValue(messageDictionary){
             (error,reference) in
@@ -171,13 +175,18 @@ class ChatViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             let text = snapshotValue["MessageBody"]!
             let sender = snapshotValue["Sender"]!
+            let event = snapshotValue["Event"]!
             
             let message = Message()
             
             message.messageBody = text
             message.sender = sender
+            message.event = event
             
-            self.messageArray.append(message)
+            if message.event == self.Evento.joinId{
+                self.messageArray.append(message)
+            }
+            
             
             self.configureTableView()
             self.messageTableView.reloadData()
