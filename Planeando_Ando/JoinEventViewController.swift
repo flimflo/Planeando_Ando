@@ -2,7 +2,9 @@
 //  JoinEventViewController.swift
 //  Planeando_Ando
 //
-//  Created by Mildred Irais Gil Melchor on 11/22/19.
+//  Created by Fernando Limón Flores and Mildred Gil
+//
+//  Copyright © 2019 Fernando Limón Flores. All rights reserved.
 //
 
 import UIKit

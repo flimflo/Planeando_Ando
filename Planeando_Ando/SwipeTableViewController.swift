@@ -2,7 +2,8 @@
 //  SwipeTableViewController.swift
 //  ToDoL
 //
-//  Created by Fernando Limón Flores on 08/10/19.
+//  Created by Fernando Limón Flores and Mildred Gil
+//
 //  Copyright © 2019 Fernando Limón Flores. All rights reserved.
 //
 

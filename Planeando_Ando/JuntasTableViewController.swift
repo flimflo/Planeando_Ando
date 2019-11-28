@@ -2,8 +2,9 @@
 //  JuntasTableViewController.swift
 //  Planeando_Ando
 //
-//  Created by Fernando Limón
-//  Created by Mildred Gil
+//  Created by Fernando Limón Flores and Mildred Gil
+//
+//  Copyright © 2019 Fernando Limón Flores. All rights reserved.
 //
 
 import UIKit

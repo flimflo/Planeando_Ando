@@ -1,8 +1,9 @@
 //
 //  RegisterViewController.swift
-//  Flash Chat
 //
-//  This is the View Controller which registers new users with Firebase
+//  Created by Fernando Limón Flores and Mildred Gil
+//
+//  Copyright © 2019 Fernando Limón Flores. All rights reserved.
 //
 
 import UIKit
