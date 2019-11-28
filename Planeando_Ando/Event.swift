@@ -2,8 +2,9 @@
 //  Event.swift
 //  Planeando_Ando
 //
-//  Created by Fernando Limón Flores on 21/11/19.
-//  Copyright © 2019 London App Brewery. All rights reserved.
+//  Created by Fernando Limón Flores and Mildred Gil
+//
+//  Copyright © 2019 Fernando Limón Flores. All rights reserved.
 //
 
 import Foundation

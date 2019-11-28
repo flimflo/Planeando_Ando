@@ -32,7 +32,7 @@ class EditarEventoViewController: UIViewController {
         tfLugar.text = Evento.place
         tfDescripcion.text = Evento.description
         
-        
+        dpFecha.date = Evento.startTime
     }
 
     @IBOutlet weak var scrollView: UIScrollView!
@@ -50,7 +50,7 @@ class EditarEventoViewController: UIViewController {
         
         if let title = tfNombre.text, let place = tfLugar.text, let description = tfDescripcion.text{
             
-            let startTime  = obtenerFecha()
+            let startTime  = dpFecha.date
             
             db.collection("events").whereField("joinId", isEqualTo: Evento.joinId)
                 .getDocuments() { (querySnapshot, err) in

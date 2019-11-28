@@ -145,7 +145,10 @@ class EventTableViewController: UITableViewController {
                         let place = datos["place"] as? String ?? ""
                         let status = datos["status"] as? String ?? ""
                         let joinId = datos["joinId"] as? String ?? ""
-                        let startTime = datos["startTime"] as? Date ?? Date()
+                        
+                        let tsStart = datos["startTime"] as! Timestamp
+                        let startTime = tsStart.dateValue()
+                        
                         let members = datos["members"] as? Array<String> ?? [String]()
                         let docRef = datos["docRef"] as? String ?? ""
                         
