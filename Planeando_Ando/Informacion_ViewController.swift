@@ -28,12 +28,20 @@ class Informacion_ViewController: UIViewController {
         if Evento.members[0] != user {
             btOutlet.isHidden = true
         }
+        print("aqui")
+        print(Evento)
+        print("aqui")
         
         
         lbNombre.text = Evento.title
         lbLugar.text = Evento.place
         tvDescripcion.text = Evento.description
-        lbFecha.text = "\(Evento.startTime)"
+        
+        let formatter = DateFormatter()
+        
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
+        lbFecha.text = formatter.string(from: Evento.startTime)
         
         if Evento.members.count == 1{
             lbMiembros.text = "\(Evento.members.count) Miembro"

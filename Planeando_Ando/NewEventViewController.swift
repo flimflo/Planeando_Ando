@@ -46,7 +46,7 @@ class newEventViewController: UIViewController {
         
         if let title = tfNombre.text, let place = tfLugar.text, let description = tfDescripcion.text{
             
-            let startTime  = obtenerFecha()
+            let startTime  = dpFecha.date
             
             let joinId = prueba
              
