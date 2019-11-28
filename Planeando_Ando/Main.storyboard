@@ -1482,7 +1482,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k1X-t0-LF4">
                                         <rect key="frame" x="60" y="286.5" width="223" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6P-9E-clL">
                                         <rect key="frame" x="60" y="410.5" width="223" height="32"/>
@@ -1507,6 +1507,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="k1X-t0-LF4" firstAttribute="centerX" secondItem="ydz-7X-urN" secondAttribute="centerX" id="07h-9Q-zae"/>
                                     <constraint firstItem="M6P-9E-clL" firstAttribute="leading" secondItem="ydz-7X-urN" secondAttribute="leading" constant="60" id="5tY-z6-L51"/>
@@ -1522,6 +1523,9 @@
                                     <constraint firstItem="M6P-9E-clL" firstAttribute="top" secondItem="k1X-t0-LF4" secondAttribute="bottom" constant="90" id="ryR-f0-gH6"/>
                                     <constraint firstItem="n94-VP-729" firstAttribute="leading" secondItem="ydz-7X-urN" secondAttribute="leading" constant="60" id="yAw-xq-wM5"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0TY-Vh-a9C" appends="YES" id="vDl-7g-RAt"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1542,6 +1546,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R3Q-JB-Bjo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0TY-Vh-a9C">
+                    <connections>
+                        <action selector="tapDismiss:" destination="lts-2j-7sE" id="p9j-in-KZC"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4504.8000000000002" y="-1155.472263868066"/>
         </scene>
@@ -1840,6 +1849,6 @@
         <image name="timer" catalog="system" width="64" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="81b-zZ-Cbo"/>
+        <segue reference="6GR-yv-kuO"/>
     </inferredMetricsTieBreakers>
 </document>

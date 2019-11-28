@@ -13,12 +13,14 @@ struct Junta {
     var description:String
     var start:Date
     var end:Date
+    var id:String
     
     var dictionary:[String:Any] {
         return [
             "description":description,
-            "start":start,
-            "end":end
+            "start":Timestamp(date: start),
+            "end":Timestamp(date: end),
+            "id":id
         ]
     }
 }
@@ -29,5 +31,6 @@ extension Junta {
         description = ""
         start = Date()
         end = Date()
+        id = ""
     }
 }

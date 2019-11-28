@@ -63,7 +63,7 @@ class EventTableViewController: UITableViewController {
         view.removeGestureRecognizer(tap)
     }
     
-    func loadData() {
+    /*func loadData() {
         db.collection("events").whereField("members", arrayContains: user).whereField("startTime", isGreaterThan: Date()).getDocuments() { (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")
@@ -90,7 +90,7 @@ class EventTableViewController: UITableViewController {
                 self.checkForUpdates()
             }
         }
-    }
+    }*/
     
     
     func checkForAdd() {
@@ -112,8 +112,9 @@ class EventTableViewController: UITableViewController {
                         let joinId = datos["joinId"] as? String ?? ""
                         let startTime = datos["startTime"] as? Date ?? Date()
                         let members = datos["members"] as? Array<String> ?? [String]()
+                        let docRef = datos["docRef"] as? String ?? ""
                         
-                        let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members)
+                        let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members, docRef: docRef)
                         
                         self.eventArray.append(evento)
                         DispatchQueue.main.async {
@@ -143,8 +144,9 @@ class EventTableViewController: UITableViewController {
                         let joinId = datos["joinId"] as? String ?? ""
                         let startTime = datos["startTime"] as? Date ?? Date()
                         let members = datos["members"] as? Array<String> ?? [String]()
+                        let docRef = datos["docRef"] as? String ?? ""
                         
-                        let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members)
+                        let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members, docRef: docRef)
                         
                         var index = 0
                         for i in 0..<self.eventArray.count {
@@ -182,8 +184,9 @@ class EventTableViewController: UITableViewController {
                         let joinId = datos["joinId"] as? String ?? ""
                         let startTime = datos["startTime"] as? Date ?? Date()
                         let members = datos["members"] as? Array<String> ?? [String]()
+                        let docRef = datos["docRef"] as? String ?? ""
                         
-                        let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members)
+                        let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members,docRef: docRef)
                         
                         var index = 0
                         for i in 0..<self.eventArray.count {
@@ -312,6 +315,18 @@ class EventTableViewController: UITableViewController {
             let indexPath = tableView.indexPathForSelectedRow!
             
             infVc.Evento = eventArray[indexPath.row]
+            
+            //let Nuevapantalla = tabVc.viewControllers?.first as! JuntasTableViewController
+            
+            let navVc = tabVc.viewControllers![1] as! UINavigationController
+            let juntaVc = navVc.viewControllers.first as! JuntasTableViewController
+            
+            juntaVc.Evento = eventArray[indexPath.row]
+            
+            //let nav = Nuevapantalla.viewControllers![1] as! UINavigationController
+            //let destinationViewController = nav.topviewcontroller as ProfileController
+            
+            //Nuevapantalla.prueba = eventArray[indexPath.row].title
         }
         else{
                /*let vistaAgrega = segue.destination as! ViewControllerAgregar
