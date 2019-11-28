@@ -174,8 +174,8 @@
             filePath = "Planeando_Ando/newEventViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "obtenerFecha()"
             landmarkType = "7">
          </BreakpointContent>

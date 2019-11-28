@@ -50,7 +50,8 @@ class newEventViewController: UIViewController {
             
             let joinId = prueba
              
-            let newEvent = Event(title: title, description: description, startTime: startTime, place: place, status: "Activo", joinId:joinId, members: [user!])
+            let newEvent = Event(title: title, description: description, startTime: startTime, place: place, status: "Activo", joinId:joinId, members: [user!],docRef: "")
+        
                    
                    var ref:DocumentReference? = nil
                    ref = db.collection("events").addDocument(data: newEvent.dictionary) {
@@ -60,6 +61,7 @@ class newEventViewController: UIViewController {
                            print("Error adding document: \(error.localizedDescription)")
                        }else{
                            print("Document added with ID: \(ref!.documentID)")
+                            self.db.collection("events").document(String(ref!.documentID)).setData([ "docRef": String(ref!.documentID)], merge: true)
                        }
                        
                    }
