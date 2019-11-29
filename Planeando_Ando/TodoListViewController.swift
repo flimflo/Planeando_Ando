@@ -24,9 +24,6 @@ class TodoListViewController: SwipeTableViewController {
         }
     }
     
-    //User default persistant
-    //let defaults = UserDefaults.standard
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

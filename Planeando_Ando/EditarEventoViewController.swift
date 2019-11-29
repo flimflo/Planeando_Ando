@@ -70,30 +70,6 @@ class EditarEventoViewController: UIViewController {
         }
     }
     
-    func obtenerFecha() -> Date{
-        
-        let formatter = DateFormatter()
-        //formatter.dateFormat = "yyyy/MM/dd HH:mm"
-        formatter.dateFormat = "MM-dd-yyyy HH:mm"
-        //let someDateTime = formatter.date(from: "2016/10/08 22:31")
-        
-        //var stringf = formatter.date(from: dpFecha.)
-        let calendar = Calendar.current
-        //let datecomponent = DateComponents(calendar: calendar,year: dpFecha!.date, month: dpFecha!.date, day: dpFecha!.date)
-        let año = calendar.component(.year, from: dpFecha.date)
-        let mes = calendar.component(.month, from: dpFecha.date)
-        let dia = calendar.component(.day, from: dpFecha.date)
-        let hora = calendar.component(.hour, from: dpHora.date)
-        let minuto = calendar.component(.minute, from: dpHora.date)
-        
-        var fechaYHora:Date
-        
-        //fechaYHora = formatter.date(from: "\(año)/\(mes)/\(dia) \(hora):\(minuto)")!
-        fechaYHora = formatter.date(from: "\(mes)-\(dia)-\(año) \(hora):\(minuto)")!
-        return fechaYHora
-        
-    }
-    
     @objc func keyboardWillShow(notification: NSNotification) {
 
         if let keyboardSize = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue {

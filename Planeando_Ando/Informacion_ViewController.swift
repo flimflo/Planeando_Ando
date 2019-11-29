@@ -28,10 +28,6 @@ class Informacion_ViewController: UIViewController {
         if Evento.members[0] != user {
             btOutlet.isHidden = true
         }
-        print("aqui")
-        print(Evento)
-        print("aqui")
-        
         
         lbNombre.text = Evento.title
         lbLugar.text = Evento.place

@@ -34,11 +34,6 @@ class JuntasTableViewController: UITableViewController {
     
     var identificador = ""
     
-    //var indexpath = IndexPath.init()
-    
-    //let settings = db.settings
-    //settings.are
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tap = UITapGestureRecognizer(target: self, action: #selector(dismissPopOver))
@@ -53,7 +48,6 @@ class JuntasTableViewController: UITableViewController {
         }
         
         checkForUpdates()
-        //checkForDelete()
     }
     
     func checkForUpdates() {
@@ -75,18 +69,11 @@ class JuntasTableViewController: UITableViewController {
                         
                         let tsEnd = datos["end"] as! Timestamp
                         let endTime = tsEnd.dateValue()
-                        //let formatter = DateFormatter()
-                        //formatter.dateFormat = "yyyy-MM-dd HH:mm:ss ZZZ"
-                        //let formattedTimeZoneStr = formatter.string(from: aDate)
                         
-                        let id = String(diff.document.documentID)//datos["id"] as? String ?? ""
+                        let id = String(diff.document.documentID)
                         
                         let junta = Junta(description: description, start: startTime, end: endTime,id: id)
-                        print(junta)
-                        print("\n")
-                        print("\n")
-                        print("\n")
-                        print(datos)
+                        
                         self.juntasArray.append(junta)
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
@@ -116,8 +103,7 @@ class JuntasTableViewController: UITableViewController {
                             }
                         }
                         self.juntasArray.remove(at: index)
-                        //let indexPath = IndexPath(row: index, section: 1)
-                        //self.tableView.deleteRows(at: [indexPath], with: .fade)
+
                         DispatchQueue.main.async {
                             self.tableView.reloadData()
                         }
@@ -202,7 +188,6 @@ class JuntasTableViewController: UITableViewController {
                 }
             }
             
-            //juntasArray.append(junta)
             DispatchQueue.main.async {
                 
                 self.tableView.reloadData()
@@ -247,21 +232,7 @@ class JuntasTableViewController: UITableViewController {
                 print(indexPath.row)
                 print(juntasArray[indexPath.row].id)
                 db.collection("events").document(Evento.docRef).collection("meetings").document(juntasArray[indexPath.row].id).delete()
-               /*db.collection("events").document(Evento.docRef).collection("meetings").whereField("id", isEqualTo: juntasArray[indexPath.row].id)
-                    .getDocuments() { (querySnapshot, err) in
-                        if let err = err {
-                            print("Error getting documents: \(err)")
-                        } else {
-                            let document = querySnapshot!.documents.first
-                            print(document)
-                            document?.reference.delete()
-                            print(document)
-                            print("borrar")
-                            //indexpath = IndexPath
-                            //self.juntasArray.remove(at: indexPath.row)
-                            //tableView.deleteRows(at: [indexPath], with: .fade)
-                        }
-                }*/
+               
             }else{
                 let alerta = UIAlertController(title: "Permisos", message: "No tienes los permisos necesarios para eliminar esta junta", preferredStyle: .alert)
                 
