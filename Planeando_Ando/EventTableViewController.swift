@@ -2,8 +2,9 @@
 //  EventTableViewController.swift
 //  Planeando_Ando
 //
-//  Created by Fernando Limón Flores on 10/11/19.
-//  Copyright © 2019 London App Brewery. All rights reserved.
+//  Created by Fernando Limón Flores and Mildred Gil
+//
+//  Copyright © 2019 Fernando Limón Flores. All rights reserved.
 //
 
 import UIKit
@@ -28,14 +29,9 @@ class EventTableViewController: UITableViewController {
         super.viewDidLoad()
         self.navigationItem.hidesBackButton = true
         tap = UITapGestureRecognizer(target: self, action: #selector(dismissPopOver))
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        //self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         db = Firestore.firestore()
-        //loadData()
+
         checkForUpdates()
         checkForAdd()
         checkForDelete()
@@ -63,36 +59,6 @@ class EventTableViewController: UITableViewController {
         view.removeGestureRecognizer(tap)
     }
     
-    func loadData() {
-        db.collection("events").whereField("members", arrayContains: user).whereField("startTime", isGreaterThan: Date()).getDocuments() { (querySnapshot, err) in
-            if let err = err {
-                print("Error getting documents: \(err)")
-            } else {
-                for document in querySnapshot!.documents {
-                    print("\(document.documentID) => \(document.data())")
-                    
-                    let datos = document.data()
-                    let title = datos["title"] as! String
-                    let description = datos["description"] as! String
-                    let place = datos["place"] as! String
-                    let status = datos["status"] as! String
-                    let joinId = datos["joinId"] as! String
-                    let startTime = datos["startTime"] as? Date ?? Date()
-                    let members = datos["members"] as? Array<String> ?? [String]()
-                    
-                    let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members)
-                    
-                    self.eventArray.append(evento)
-                }
-            }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-                self.checkForUpdates()
-            }
-        }
-    }
-    
-    
     func checkForAdd() {
         db.collection("events").order(by: "startTime", descending: true).whereField("members", arrayContains: user).addSnapshotListener {
                 querySnapshot, error in
@@ -110,10 +76,14 @@ class EventTableViewController: UITableViewController {
                         let place = datos["place"] as? String ?? ""
                         let status = datos["status"] as? String ?? ""
                         let joinId = datos["joinId"] as? String ?? ""
-                        let startTime = datos["startTime"] as? Date ?? Date()
-                        let members = datos["members"] as? Array<String> ?? [String]()
                         
-                        let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members)
+                        let tsStart = datos["startTime"] as! Timestamp
+                        let startTime = tsStart.dateValue()
+                        
+                        let members = datos["members"] as? Array<String> ?? [String]()
+                        let docRef = datos["docRef"] as? String ?? ""
+                        
+                        let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members, docRef: docRef)
                         
                         self.eventArray.append(evento)
                         DispatchQueue.main.async {
@@ -141,10 +111,14 @@ class EventTableViewController: UITableViewController {
                         let place = datos["place"] as? String ?? ""
                         let status = datos["status"] as? String ?? ""
                         let joinId = datos["joinId"] as? String ?? ""
-                        let startTime = datos["startTime"] as? Date ?? Date()
-                        let members = datos["members"] as? Array<String> ?? [String]()
                         
-                        let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members)
+                        let tsStart = datos["startTime"] as! Timestamp
+                        let startTime = tsStart.dateValue()
+                        
+                        let members = datos["members"] as? Array<String> ?? [String]()
+                        let docRef = datos["docRef"] as? String ?? ""
+                        
+                        let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members, docRef: docRef)
                         
                         var index = 0
                         for i in 0..<self.eventArray.count {
@@ -182,8 +156,9 @@ class EventTableViewController: UITableViewController {
                         let joinId = datos["joinId"] as? String ?? ""
                         let startTime = datos["startTime"] as? Date ?? Date()
                         let members = datos["members"] as? Array<String> ?? [String]()
+                        let docRef = datos["docRef"] as? String ?? ""
                         
-                        let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members)
+                        let evento = Event(title: title, description: description, startTime: startTime, place: place, status: status, joinId: joinId, members: members,docRef: docRef)
                         
                         var index = 0
                         for i in 0..<self.eventArray.count {
@@ -264,10 +239,6 @@ class EventTableViewController: UITableViewController {
                         }
                 }
             }
-            
-            
-            //eventArray.remove(at: indexPath.row)
-            //tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
 
@@ -312,10 +283,15 @@ class EventTableViewController: UITableViewController {
             let indexPath = tableView.indexPathForSelectedRow!
             
             infVc.Evento = eventArray[indexPath.row]
-        }
-        else{
-               /*let vistaAgrega = segue.destination as! ViewControllerAgregar
-               vistaAgrega.delegado = self*/
+            
+            let navVc = tabVc.viewControllers![1] as! UINavigationController
+            let juntaVc = navVc.viewControllers.first as! JuntasTableViewController
+            
+            juntaVc.Evento = eventArray[indexPath.row]
+            
+            let chatView = tabVc.viewControllers?[2] as! ChatViewController
+            
+            chatView.Evento = eventArray[indexPath.row]
         }
     }
 }

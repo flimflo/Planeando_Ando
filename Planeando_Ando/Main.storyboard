@@ -419,11 +419,11 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Cell" id="P43-MA-wtv">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="P43-MA-wtv">
                                 <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="P43-MA-wtv" id="Lxj-ep-ht1">
-                                    <rect key="frame" x="0.0" y="0.0" width="348" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </tableViewCellContentView>
@@ -628,6 +628,7 @@
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="btAgregarJuntas" destination="lQY-VK-bTu" id="M73-PJ-apL"/>
                         <outlet property="pckNewDateTimeEnd" destination="BSr-Qh-ztG" id="Z7k-f3-YWQ"/>
                         <outlet property="pckNewDateTimeStart" destination="Mrd-Ln-z5o" id="vXl-y8-QbH"/>
                         <outlet property="popOver" destination="bqe-Zu-B9F" id="5Bj-eE-8oS"/>
@@ -1239,8 +1240,8 @@
                                                     <!--2037-12-31 11:00:00 +0000-->
                                                 </date>
                                             </datePicker>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHV-Kp-0R5">
-                                                <rect key="frame" x="51" y="456" width="61.5" height="32"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha y Hora" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CHV-Kp-0R5">
+                                                <rect key="frame" x="51" y="456" width="123" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="NqQ-Ls-vxR"/>
                                                 </constraints>
@@ -1302,7 +1303,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="gNc-sP-JQF">
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" translatesAutoresizingMaskIntoConstraints="NO" id="gNc-sP-JQF">
                                                 <rect key="frame" x="25" y="493" width="325" height="120"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -1482,7 +1483,7 @@
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k1X-t0-LF4">
                                         <rect key="frame" x="60" y="274.5" width="223" height="34"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6P-9E-clL">
                                         <rect key="frame" x="60" y="398.5" width="223" height="32"/>
@@ -1507,6 +1508,7 @@
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="k1X-t0-LF4" firstAttribute="centerX" secondItem="ydz-7X-urN" secondAttribute="centerX" id="07h-9Q-zae"/>
                                     <constraint firstItem="M6P-9E-clL" firstAttribute="leading" secondItem="ydz-7X-urN" secondAttribute="leading" constant="60" id="5tY-z6-L51"/>
@@ -1522,6 +1524,9 @@
                                     <constraint firstItem="M6P-9E-clL" firstAttribute="top" secondItem="k1X-t0-LF4" secondAttribute="bottom" constant="90" id="ryR-f0-gH6"/>
                                     <constraint firstItem="n94-VP-729" firstAttribute="leading" secondItem="ydz-7X-urN" secondAttribute="leading" constant="60" id="yAw-xq-wM5"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="0TY-Vh-a9C" appends="YES" id="vDl-7g-RAt"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1542,6 +1547,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="R3Q-JB-Bjo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="0TY-Vh-a9C">
+                    <connections>
+                        <action selector="tapDismiss:" destination="lts-2j-7sE" id="p9j-in-KZC"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="4504.8000000000002" y="-1155.472263868066"/>
         </scene>
@@ -1581,8 +1591,8 @@
                                                     <!--2037-12-31 11:00:00 +0000-->
                                                 </date>
                                             </datePicker>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oja-O1-fOi">
-                                                <rect key="frame" x="51" y="456" width="61.5" height="32"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fecha y Hora" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oja-O1-fOi">
+                                                <rect key="frame" x="51" y="456" width="123" height="32"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="32" id="TNz-JM-A4B"/>
                                                 </constraints>
@@ -1644,7 +1654,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="sym-kg-xc0">
+                                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" translatesAutoresizingMaskIntoConstraints="NO" id="sym-kg-xc0">
                                                 <rect key="frame" x="25" y="493" width="325" height="120"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>

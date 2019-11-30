@@ -1,9 +1,9 @@
 //
 //  Informacion_ViewController.swift
-//  INC_MTY
 //
-//  Created by Fernando Limón Flores on 11/10/19.
-//  Copyright © 2019 London App Brewery. All rights reserved.
+//  Created by Fernando Limón Flores and Mildred Gil
+//
+//  Copyright © 2019 Fernando Limón Flores. All rights reserved.
 //
 
 import UIKit
@@ -46,11 +46,12 @@ class newEventViewController: UIViewController {
         
         if let title = tfNombre.text, let place = tfLugar.text, let description = tfDescripcion.text{
             
-            let startTime  = obtenerFecha()
+            let startTime  = dpFecha.date
             
             let joinId = prueba
              
-            let newEvent = Event(title: title, description: description, startTime: startTime, place: place, status: "Activo", joinId:joinId, members: [user!])
+            let newEvent = Event(title: title, description: description, startTime: startTime, place: place, status: "Activo", joinId:joinId, members: [user!],docRef: "")
+        
                    
                    var ref:DocumentReference? = nil
                    ref = db.collection("events").addDocument(data: newEvent.dictionary) {
@@ -60,34 +61,11 @@ class newEventViewController: UIViewController {
                            print("Error adding document: \(error.localizedDescription)")
                        }else{
                            print("Document added with ID: \(ref!.documentID)")
+                            self.db.collection("events").document(String(ref!.documentID)).setData([ "docRef": String(ref!.documentID)], merge: true)
                        }
                        
                    }
         }
-    }
-    
-    func obtenerFecha() -> Date{
-        
-        let formatter = DateFormatter()
-        //formatter.dateFormat = "yyyy/MM/dd HH:mm"
-        formatter.dateFormat = "MM-dd-yyyy HH:mm"
-        //let someDateTime = formatter.date(from: "2016/10/08 22:31")
-        
-        //var stringf = formatter.date(from: dpFecha.)
-        let calendar = Calendar.current
-        //let datecomponent = DateComponents(calendar: calendar,year: dpFecha!.date, month: dpFecha!.date, day: dpFecha!.date)
-        let año = calendar.component(.year, from: dpFecha.date)
-        let mes = calendar.component(.month, from: dpFecha.date)
-        let dia = calendar.component(.day, from: dpFecha.date)
-        let hora = calendar.component(.hour, from: dpHora.date)
-        let minuto = calendar.component(.minute, from: dpHora.date)
-        
-        var fechaYHora:Date
-        
-        //fechaYHora = formatter.date(from: "\(año)/\(mes)/\(dia) \(hora):\(minuto)")!
-        fechaYHora = formatter.date(from: "\(mes)-\(dia)-\(año) \(hora):\(minuto)")!
-        return fechaYHora
-        
     }
     
     func obtenerEventoId(){
@@ -111,7 +89,7 @@ class newEventViewController: UIViewController {
             // Print out response string
             let responseString = NSString(data: data!, encoding: String.Encoding.utf8.rawValue)
             
-            lastID = "\(responseString!)" // Sets some variable or text field. Not that its unwrapped because its an optional.
+            lastID = "\(responseString!)"
             self.prueba = lastID!
         }
 

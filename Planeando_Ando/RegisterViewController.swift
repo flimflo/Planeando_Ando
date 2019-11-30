@@ -1,8 +1,9 @@
 //
 //  RegisterViewController.swift
-//  Flash Chat
 //
-//  This is the View Controller which registers new users with Firebase
+//  Created by Fernando Limón Flores and Mildred Gil
+//
+//  Copyright © 2019 Fernando Limón Flores. All rights reserved.
 //
 
 import UIKit
@@ -76,12 +77,6 @@ class RegisterViewController: UIViewController {
                     //Success
                     print("Registration Successful")
                     
-                    /*var user = self.emailTextfield.text!
-                    user.removeLast(9)
-                    user.removeFirst()
-                    user = "a" + user
-                    
-                    self.uploadQR(user: user)*/
                     SVProgressHUD.dismiss()
                     self.performSegue(withIdentifier: "goToApp", sender: self)
                     
@@ -104,47 +99,6 @@ class RegisterViewController: UIViewController {
             }
         }
     }
-    
-    /*func uploadQR(user: String){
-        
-        let uploadRef = Storage.storage().reference(withPath: "QR/\(user).png")
-        
-        guard let imageData = generateQRCode(from: user)?.pngData() else {
-            return
-        }
-        
-        let uploadMetadata = StorageMetadata.init()
-        
-        uploadMetadata.contentType = "image/png"
-        
-        uploadRef.putData(imageData, metadata: uploadMetadata) { (downloadMetadata, error) in
-            
-            if let error = error {
-                print("Error en: \(error.localizedDescription)")
-                return
-            }
-            print("Archivo subido exitosamente")
-            self.uploadInfo(user: user)
-        }
-    }*/
-    
-    /*func generateQRCode(from string:String) -> UIImage? {
-        
-        let data = string.data(using: String.Encoding.ascii)
-        
-        if let filter = CIFilter(name: "CIQRCodeGenerator"){
-            
-            filter.setValue(data, forKey: "inputMessage")
-            
-            let transform = CGAffineTransform(scaleX: 3, y: 3)
-            
-            if let output = filter.outputImage?.transformed(by: transform) {
-                return UIImage(ciImage: output)
-            }
-            
-        }
-        return nil
-    }*/
     
     func generateAlert(Message: String) {
         

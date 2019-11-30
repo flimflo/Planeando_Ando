@@ -1,8 +1,10 @@
 //
 //  LogInViewController.swift
-//  Flash Chat
 //
-//  This is the view controller where users login
+//  Created by Fernando Limón Flores and Mildred Gil
+//
+//  Copyright © 2019 Fernando Limón Flores. All rights reserved.
+//
 
 
 import UIKit

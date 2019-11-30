@@ -1,9 +1,9 @@
 //
 //  Informacion_ViewController.swift
-//  INC_MTY
 //
-//  Created by Fernando Limón Flores on 11/10/19.
-//  Copyright © 2019 London App Brewery. All rights reserved.
+//  Created by Fernando Limón Flores and Mildred Gil
+//
+//  Copyright © 2019 Fernando Limón Flores. All rights reserved.
 //
 
 import UIKit
@@ -29,11 +29,15 @@ class Informacion_ViewController: UIViewController {
             btOutlet.isHidden = true
         }
         
-        
         lbNombre.text = Evento.title
         lbLugar.text = Evento.place
         tvDescripcion.text = Evento.description
-        lbFecha.text = "\(Evento.startTime)"
+        
+        let formatter = DateFormatter()
+        
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
+        lbFecha.text = formatter.string(from: Evento.startTime)
         
         if Evento.members.count == 1{
             lbMiembros.text = "\(Evento.members.count) Miembro"

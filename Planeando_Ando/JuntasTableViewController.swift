@@ -2,11 +2,14 @@
 //  JuntasTableViewController.swift
 //  Planeando_Ando
 //
-//  Created by Angel Figueroa Rivera on 11/26/19.
-//  Copyright © 2019 London App Brewery. All rights reserved.
+//  Created by Fernando Limón Flores and Mildred Gil
+//
+//  Copyright © 2019 Fernando Limón Flores. All rights reserved.
 //
 
 import UIKit
+import FirebaseFirestore
+import Firebase
 
 class JuntasTableViewController: UITableViewController {
 
@@ -15,12 +18,21 @@ class JuntasTableViewController: UITableViewController {
     @IBOutlet weak var pckNewDateTimeStart: UIDatePicker!
     @IBOutlet weak var pckNewDateTimeEnd: UIDatePicker!
     
+    @IBOutlet weak var btAgregarJuntas: UIBarButtonItem!
     var tap : UITapGestureRecognizer!
     
     let screenWidth = UIScreen.main.bounds.width
     let screenHeight = UIScreen.main.bounds.height
     
+    var Evento:Event = Event()
+    
     var juntasArray = [Junta]()
+    
+    var user = Auth.auth().currentUser?.email
+    
+    var db:Firestore!
+    
+    var identificador = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,8 +42,104 @@ class JuntasTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        db = Firestore.firestore()
+        if Evento.members[0] != user{
+            btAgregarJuntas.isEnabled = false
+        }
+        
+        checkForUpdates()
     }
+    
+    func checkForUpdates() {
+        db.collection("events").document(Evento.docRef).collection("meetings").order(by: "start", descending: false).addSnapshotListener {
+                querySnapshot, error in
+                
+                guard let snapshot = querySnapshot else {return}
+                
+                snapshot.documentChanges.forEach {
+                    diff in
+                    
+                    if diff.type == .added {
+                        
+                        let datos = diff.document.data()
+                        let description = datos["description"] as? String ?? ""
+                        
+                        let tsStart = datos["start"] as! Timestamp
+                        let startTime = tsStart.dateValue()
+                        
+                        let tsEnd = datos["end"] as! Timestamp
+                        let endTime = tsEnd.dateValue()
+                        
+                        let id = String(diff.document.documentID)
+                        
+                        let junta = Junta(description: description, start: startTime, end: endTime,id: id)
+                        
+                        self.juntasArray.append(junta)
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                    
+                    if diff.type == .removed {
+                        print("Removed user: \(diff.document.data())")
+                        let datos = diff.document.data()
+                        
+                        let id = datos["id"] as? String ?? ""
+                        let description = datos["description"] as? String ?? ""
+                        
+                        let tsStart = datos["start"] as! Timestamp
+                        let startTime = tsStart.dateValue()
+                        
+                        let tsEnd = datos["end"] as! Timestamp
+                        let endTime = tsEnd.dateValue()
+                        
+                        let junta = Junta(description: description, start: startTime, end: endTime, id: id)
+                        
+                        var index = 0
+                        for i in 0..<self.juntasArray.count {
+                            
+                            if self.juntasArray[i].id == junta.id {
+                                index = i
+                            }
+                        }
+                        self.juntasArray.remove(at: index)
 
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                    
+                    if diff.type == .modified {
+                        
+                        let datos = diff.document.data()
+                        let id = datos["id"] as? String ?? ""
+                        let description = datos["description"] as? String ?? ""
+                        
+                        let tsStart = datos["start"] as! Timestamp
+                        let startTime = tsStart.dateValue()
+                        
+                        let tsEnd = datos["end"] as! Timestamp
+                        let endTime = tsEnd.dateValue()
+                        
+                        let junta = Junta(description: description, start: startTime, end: endTime, id: id)
+                        
+                        var index = 0
+                        for i in 0..<self.juntasArray.count {
+                            
+                            if self.juntasArray[i].id == junta.id {
+                                index = i
+                            }
+                        }
+                        self.juntasArray.remove(at: index)
+                        self.juntasArray.insert(junta, at: index)
+                        DispatchQueue.main.async {
+                            self.tableView.reloadData()
+                        }
+                    }
+                }
+        }
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -59,11 +167,29 @@ class JuntasTableViewController: UITableViewController {
     @IBAction func onAddNew(_ sender: Any) {
         if let desc = tfNewDesc.text {
             let startTime  = obtenerFecha(date : pckNewDateTimeStart)
+                
             let endTime  = obtenerFecha(date : pckNewDateTimeEnd)
 
-            let junta = Junta(description: desc, start: startTime, end: endTime)
-            juntasArray.append(junta)
+            let junta = Junta(description: desc, start: startTime, end: endTime,id: "")
+            
+            var ref:DocumentReference? = nil
+            ref = db.collection("events").document(Evento.docRef).collection("meetings").addDocument(data: junta.dictionary) {
+                error in
+                
+                if let error = error {
+                    print("Error adding document: \(error.localizedDescription)")
+                }else{
+                    print("Document added with ID: \(ref!.documentID)")
+                   
+                    self.identificador = String(ref!.documentID)
+                   
+                    self.db.collection("events").document(self.Evento.docRef).collection("meetings").document(self.identificador).setData([
+                    "id": self.identificador], merge: true)
+                }
+            }
+            
             DispatchQueue.main.async {
+                
                 self.tableView.reloadData()
             }
             
@@ -81,9 +207,8 @@ class JuntasTableViewController: UITableViewController {
         let junta = juntasArray[indexPath.row]
         let formatter = DateFormatter()
         
-        formatter.dateFormat = "MM-dd-yy HH:mm"
-        formatter.string(from: junta.start)
-        formatter.string(from: junta.start)
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .medium
         
         cell.textLabel?.text = "\(junta.description)"
         cell.detailTextLabel?.text = formatter.string(from: junta.start) + " - " + formatter.string(from: junta.end)
@@ -101,8 +226,22 @@ class JuntasTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
-            juntasArray.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
+            if Evento.members[0] == user {
+               
+                print(Evento.docRef)
+                print(indexPath.row)
+                print(juntasArray[indexPath.row].id)
+                db.collection("events").document(Evento.docRef).collection("meetings").document(juntasArray[indexPath.row].id).delete()
+               
+            }else{
+                let alerta = UIAlertController(title: "Permisos", message: "No tienes los permisos necesarios para eliminar esta junta", preferredStyle: .alert)
+                
+                let accion = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                
+                alerta.addAction(accion)
+                
+                present(alerta, animated: true, completion: nil)
+            }
         }
     }
     
