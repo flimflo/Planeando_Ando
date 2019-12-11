@@ -119,7 +119,13 @@
                             <constraint firstItem="IzD-1O-wWn" firstAttribute="top" secondItem="9g1-SA-C5Y" secondAttribute="top" id="zlz-VI-foh"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Bienvenida" id="qIL-hP-GCy"/>
+                    <navigationItem key="navigationItem" title="Bienvenida" id="qIL-hP-GCy">
+                        <barButtonItem key="rightBarButtonItem" title="Creditos" id="ykd-yy-vnL">
+                            <connections>
+                                <segue destination="aP7-sr-wQh" kind="modal" id="Bxf-Lh-MVx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="btIniciar_Sesion" destination="rV4-Sa-2Rb" id="qHy-ig-SX9"/>
                         <outlet property="btRegistrarse" destination="uWY-w2-6La" id="mZ9-FL-MDF"/>
@@ -1754,6 +1760,89 @@
             </objects>
             <point key="canvasLocation" x="5625" y="1412"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="llo-aA-yU3">
+            <objects>
+                <viewController id="aP7-sr-wQh" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0sI-m4-HjV"/>
+                        <viewControllerLayoutGuide type="bottom" id="ogf-tk-pj7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="db3-Vf-8Uy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoBackground" translatesAutoresizingMaskIntoConstraints="NO" id="6td-bB-EbG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d3T-wL-Poe">
+                                <rect key="frame" x="20" y="50" width="335" height="547"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Planeando_ando" translatesAutoresizingMaskIntoConstraints="NO" id="Ixg-ru-eHt">
+                                        <rect key="frame" x="38" y="30" width="259" height="100"/>
+                                        <color key="backgroundColor" red="1" green="0.83359975669999997" blue="0.88565126409999995" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="bdO-lA-iD0"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="19" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAC-RV-TH4">
+                                        <rect key="frame" x="38" y="190" width="259" height="293"/>
+                                        <string key="text">Planeando Ando ha sido desarrollado por estudiantes del Tecnológico de Monterrey durante el semestre Agosto Diciembre de 2019, como parte del curso Administración de Proyectos de Ingenieía de Software y asesorados por la maestra Jakeline Marcos.
+
+Desarrolladores:
+Fernando Limón Flores
+Mildred Gil Melchor
+
+Imágenes: 
+Ana María Limón Flores
+
+Planeando Ando se distribuye como está de manera gratuita y se prohíbe su distribución y uso con fines de lucro.</string>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS" family="Trebuchet MS" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eFa-eO-JnX" customClass="UIImageView" customModule="Planeando_Ando" customModuleProvider="target">
+                                        <rect key="frame" x="38" y="160" width="259" height="5"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="5" id="Osx-3C-KPg"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.61869347100000005" green="0.88338965179999995" blue="0.87655961510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="wAC-RV-TH4" secondAttribute="trailing" constant="38" id="0as-1A-zgf"/>
+                                    <constraint firstItem="wAC-RV-TH4" firstAttribute="leading" secondItem="d3T-wL-Poe" secondAttribute="leading" constant="38" id="DR6-de-BEL"/>
+                                    <constraint firstItem="Ixg-ru-eHt" firstAttribute="top" secondItem="d3T-wL-Poe" secondAttribute="top" constant="30" id="HlL-9I-dS5"/>
+                                    <constraint firstItem="eFa-eO-JnX" firstAttribute="leading" secondItem="d3T-wL-Poe" secondAttribute="leading" constant="38" id="JW5-mf-eAi"/>
+                                    <constraint firstItem="wAC-RV-TH4" firstAttribute="top" secondItem="eFa-eO-JnX" secondAttribute="bottom" constant="25" id="LLr-Np-8FT"/>
+                                    <constraint firstItem="eFa-eO-JnX" firstAttribute="top" secondItem="Ixg-ru-eHt" secondAttribute="bottom" constant="30" id="dfb-v8-sWK"/>
+                                    <constraint firstAttribute="trailing" secondItem="Ixg-ru-eHt" secondAttribute="trailing" constant="38" id="hDq-0W-lUi"/>
+                                    <constraint firstItem="Ixg-ru-eHt" firstAttribute="leading" secondItem="d3T-wL-Poe" secondAttribute="leading" constant="38" id="hzd-18-4Vc"/>
+                                    <constraint firstItem="Ixg-ru-eHt" firstAttribute="centerX" secondItem="d3T-wL-Poe" secondAttribute="centerX" id="iYE-xa-uPb"/>
+                                    <constraint firstAttribute="trailing" secondItem="eFa-eO-JnX" secondAttribute="trailing" constant="38" id="uZb-tK-jZk"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="d3T-wL-Poe" firstAttribute="leading" secondItem="db3-Vf-8Uy" secondAttribute="leadingMargin" constant="4" id="1lX-8I-iCd"/>
+                            <constraint firstItem="ogf-tk-pj7" firstAttribute="top" secondItem="6td-bB-EbG" secondAttribute="bottom" id="4fZ-zr-PJy"/>
+                            <constraint firstItem="d3T-wL-Poe" firstAttribute="centerX" secondItem="db3-Vf-8Uy" secondAttribute="centerX" id="QBx-wT-HZv"/>
+                            <constraint firstItem="d3T-wL-Poe" firstAttribute="top" secondItem="0sI-m4-HjV" secondAttribute="bottom" constant="50" id="SyF-C1-ako"/>
+                            <constraint firstItem="6td-bB-EbG" firstAttribute="leading" secondItem="db3-Vf-8Uy" secondAttribute="leading" id="hw4-1U-5B9"/>
+                            <constraint firstItem="6td-bB-EbG" firstAttribute="top" secondItem="0sI-m4-HjV" secondAttribute="bottom" id="kz8-EL-YTa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d3T-wL-Poe" secondAttribute="trailing" constant="4" id="oUU-pS-1zl"/>
+                            <constraint firstItem="d3T-wL-Poe" firstAttribute="centerY" secondItem="db3-Vf-8Uy" secondAttribute="centerY" id="qXC-Nk-cSm"/>
+                            <constraint firstItem="ogf-tk-pj7" firstAttribute="top" secondItem="d3T-wL-Poe" secondAttribute="bottom" constant="50" id="sXC-WA-JAC"/>
+                            <constraint firstAttribute="trailing" secondItem="6td-bB-EbG" secondAttribute="trailing" id="wVx-ki-JON"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LF3-kL-K84" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="234" y="-795"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Planeando_ando" width="742" height="250"/>
@@ -1781,7 +1870,6 @@
         <image name="tengesign.square.fill" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="UBF-e6-cRk"/>
-        <segue reference="81b-zZ-Cbo"/>
+        <segue reference="6GR-yv-kuO"/>
     </inferredMetricsTieBreakers>
 </document>

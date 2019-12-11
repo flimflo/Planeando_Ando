@@ -16,8 +16,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "73"
             endingLineNumber = "73"
-            landmarkName = "EventTableViewController"
-            landmarkType = "3">
+            landmarkName = "checkForAdd()"
+            landmarkType = "7">
             <Locations>
                <Location
                   uuid = "DAA6E87D-7F3C-4CD1-8D4D-4312BBA8EF35 - 7d93eb041183411a"
@@ -64,8 +64,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "72"
             endingLineNumber = "72"
-            landmarkName = "EventTableViewController"
-            landmarkType = "3">
+            landmarkName = "checkForAdd()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -96,7 +96,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "159"
             endingLineNumber = "159"
-            landmarkName = "checkForUpdates()"
+            landmarkName = "checkForDelete()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -111,9 +111,7 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "121"
-            endingLineNumber = "121"
-            landmarkName = "prepare(for:sender:)"
-            landmarkType = "7">
+            endingLineNumber = "121">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

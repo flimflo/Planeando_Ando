@@ -61,7 +61,7 @@
 		61DDDEDB23753343008AF10F /* Chat.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Chat.storyboard; sourceTree = "<group>"; };
 		61DDDEDD2375338D008AF10F /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		61E5D17C238DFCDD001948CB /* newEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = newEventViewController.swift; sourceTree = "<group>"; };
-		6321A9B61B94EBA10053D2E7 /* Planeando_Ando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Planeando_Ando.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6321A9B61B94EBA10053D2E7 /* Planeando Ando.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Planeando Ando.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6321A9BA1B94EBA10053D2E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6321A9C21B94EBA10053D2E7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		6321A9DB1B94EBE70053D2E7 /* CustomMessageCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomMessageCell.swift; sourceTree = "<group>"; };
@@ -109,7 +109,7 @@
 		6321A9B71B94EBA10053D2E7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				6321A9B61B94EBA10053D2E7 /* Planeando_Ando.app */,
+				6321A9B61B94EBA10053D2E7 /* Planeando Ando.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,7 +219,7 @@
 			);
 			name = Planeando_Ando;
 			productName = "Flash Chat";
-			productReference = 6321A9B61B94EBA10053D2E7 /* Planeando_Ando.app */;
+			productReference = 6321A9B61B94EBA10053D2E7 /* Planeando Ando.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -231,7 +231,7 @@
 				LastSwiftMigration = 0700;
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 1020;
-				ORGANIZATIONNAME = "London App Brewery";
+				ORGANIZATIONNAME = "";
 				TargetAttributes = {
 					6321A9B51B94EBA10053D2E7 = {
 						CreatedOnToolsVersion = 6.4;
@@ -499,8 +499,8 @@
 				INFOPLIST_FILE = Planeando_Ando/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flimflo.Planeando-Ando";
-				PRODUCT_NAME = Planeando_Ando;
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.itesmalumnos.Planeando-Ando";
+				PRODUCT_NAME = "Planeando Ando";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 			};
@@ -520,8 +520,8 @@
 				INFOPLIST_FILE = Planeando_Ando/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.flimflo.Planeando-Ando";
-				PRODUCT_NAME = Planeando_Ando;
+				PRODUCT_BUNDLE_IDENTIFIER = "edu.itesmalumnos.Planeando-Ando";
+				PRODUCT_NAME = "Planeando Ando";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 			};
